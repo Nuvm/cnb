@@ -3,6 +3,7 @@ Custom NuvBot is a mini bot for plug.dj. It's main purpose is to provide additio
 
 #Commands
 ##Everyone
+/!cmd // Shows this page.
 /!ping // Tests if the bot is online.
 /!xp @user // Explains briefly how the xp system works.
 /!rcs @user // Send a link to RCS, a script like PlugCubed and TastyPlug.
