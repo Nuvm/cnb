@@ -4,7 +4,7 @@
 //As well as asking for new ones!
  
 //Changelog
-//v0.6
+//v0.6.0
 //Added var qkCd, which delays the answer to a command to let the main bot delete the command before sending the message.
 //v0.5.23
 //Added !nuvm image command.
@@ -58,7 +58,7 @@
 //Added command !resdj and !fresdj.
  
 API.chatLog("「CNB」is now running!", true);
-var startMsg = "「CNB」v0.5.23 is now running! Type !cmd for a list of commands. // Cooldowns are now reduced to 12 seconds // New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
+var startMsg = "「CNB」v0.6.0 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
 API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
@@ -154,7 +154,6 @@ function full(data){
         cooldownLong();
       break;
       case'!nuvm':
-       if(data.uid === 5010460){
         qkCd;
         API.sendChat("/me http://i1302.photobucket.com/albums/ag137/nelsonmonty/poledancingchicken_zpse9fe4791.gif");
         cooldownLong();
