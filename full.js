@@ -4,6 +4,8 @@
 //As well as asking for new ones!
  
 //Changelog
+//v0.6.0.2
+//Tweaked var qkCd; increased from 100ms to 400ms.
 //v0.6.0
 //Added var qkCd, which delays the answer to a command to let the main bot delete the command before sending the message.
 //v0.5.23
@@ -58,14 +60,14 @@
 //Added command !resdj and !fresdj.
  
 API.chatLog("「CNB」is now running!", true);
-var startMsg = "「CNB」v0.6.0.1 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
-API.sendChat(startMsg);
+var startMsg = "「CNB」v0.6.0.2 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
+//API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
 
 function full(data){
   this.data = data;
-  var qkCd = setTimeout(200);
+  var qkCd = setTimeout(400);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
