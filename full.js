@@ -58,14 +58,14 @@
 //Added command !resdj and !fresdj.
  
 API.chatLog("「CNB」is now running!", true);
-var startMsg = "「CNB」v0.6.0 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
+var startMsg = "「CNB」v0.6.0.1 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
 API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
 
 function full(data){
   this.data = data;
-  var qkCd = setTimeout(100);
+  var qkCd = setTimeout(200);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
