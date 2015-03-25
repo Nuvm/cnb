@@ -4,6 +4,9 @@
 //As well as asking for new ones!
  
 //Changelog
+//v0.5.22.1
+//Tweaked !natvoo command.
+//Rename faulty !commands to !cmd.
 //v0.5.22
 //Added Skip detection.
 //Added !blacklists command.
@@ -51,7 +54,7 @@
 //Added command !resdj and !fresdj.
  
 API.chatLog("「CNB」is now running!", true);
-var startMsg = "「CNB」v0.5.22 is now running! Type !cmd for a list of commands. // Cooldowns are now reduced to 12 seconds // New command(s): !stab @user, !flirt @user, !natvoo, !blacklists";
+var startMsg = "「CNB」v0.5.22.1 is now running! Type !cmd for a list of commands. // Cooldowns are now reduced to 12 seconds // New command(s): !stab @user, !flirt @user, !natvoo, !blacklists";
 API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
@@ -242,7 +245,7 @@ function full(data){
         API.sendChat("「CNB」" + userName + " gives a hug to " + userTarget5 + " !");
         cooldown();
       break;
-      case'!commands':
+      case'!cmd':
         API.sendChat("「CNB」" + userTarget5 + " Commands: !call, !watermelon, !credits, !cmd, !donvoo, !uploaders, !nattvoo. Commands requiring @user: !rcs, !helprcs, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !hug, !stab, !flirt, !pizza");
         cooldownLong();
       break;
@@ -305,9 +308,9 @@ function full(data){
         cooldown();
       break;
       case'!natvoo':
-        var natvoochoices = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
-        var natvooRandom = natvoochoices[Math.floor(Math.random()*natvoochoices.length)];
-        API.sendChat("「CNB」" + userName + natvooRandom);
+        var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
+        var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
+        API.sendChat("「CNB」" + userName + soRandom);
         cooldownLong();
       break;
     }
