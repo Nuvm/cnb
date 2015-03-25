@@ -157,7 +157,6 @@ function full(data){
         qkCd;
         API.sendChat("/me http://i1302.photobucket.com/albums/ag137/nelsonmonty/poledancingchicken_zpse9fe4791.gif");
         cooldownLong();
-       }
       break;
       case'!shutdown':
         if(data.uid === 5010460){
