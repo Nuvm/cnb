@@ -61,7 +61,7 @@
  
 API.chatLog("「CNB」is now running!", true);
 var startMsg = "「CNB」v0.6.0.2 is now running! Type !cmd for a list of commands. New command(s): !stab @user, !flirt @user, !blacklists, !nuvm";
-//API.sendChat(startMsg);
+API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
 
