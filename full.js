@@ -63,7 +63,7 @@
  
 API.chatLog("「CNB」is now running!", true);
 var startMsg = "「CNB」v0.6.0.4 is now running! Type !cmd for a list of commands. //Fixed !swap and !skip to Bouncer+ \\";
-API.sendChat(startMsg);
+//API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
 
