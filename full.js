@@ -149,7 +149,7 @@ function full(data){
       //break;
       case'!cmd':
        qkCd;
-        API.sendChat("「CNB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits,");
+        API.sendChat("「CNB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits, !uploaders, !stab, !flirt, !donvoo, !credits, !hug, !pizza");
         cooldownLong();
       break;
       case'!nuvm':
