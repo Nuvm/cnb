@@ -110,9 +110,6 @@ function full(data){
           cooldown();
         }
       break;
-      case'!swap':
-        API.sendChat("/me 「CNB」" + userName3 + " used Swap.");
-      break;
       case'!skip':
         API.sendChat("/me 「CNB」" + userName3 + " used Skip.");
       break;
@@ -233,6 +230,9 @@ function full(data){
           API.sendChat("「CNB」" + userName2 + " No Pingerino Plserino");
           cooldown();
         }
+      break;
+      case'!swap':
+        API.sendChat("/me 「CNB」" + userName3 + " used Swap.");
       break;
       case'!rcs':
        qkCd;
