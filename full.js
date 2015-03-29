@@ -1,9 +1,12 @@
-//Custom NuvBot made and coded by Nuvm.
+//NoobBot made and coded by Nuvm.
 //Licensed under the Open GNU License v3.
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
  
 //Changelog
+//v1.0
+//Changed name to NoobBot.
+//Bot now works by default under basic.js.
 //v0.62.13
 //Added !fruit and !randomevent commands.
 //Changed version system (again).
@@ -65,8 +68,8 @@
 //Added changelog.
 //Added command !resdj and !fresdj.
  
-API.chatLog("「CNB」is now running!", true);
-var startMsg = "「CNB」v0.62.13 is now running! Type !cmd for a list of commands.";
+API.chatLog("「NB」is now running!", true);
+var startMsg = "「NB」v1.0 is now running! Type !cmd for a list of commands.";
 //API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
@@ -109,31 +112,31 @@ function full(data){
     switch(data.message){
       case'!ping':
         if(userRoleIs0){
-          API.sendChat("「CNB」" + userName2 + " No Pingerino Plserino");
+          API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
           cooldownLong();
         } else if(userRole0){
-          API.sendChat("「CNB」" + userName2 + " No Pingerino Plserino");
+          API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
           cooldown();
         }
       break;
       case'!skip':
        if(userRole1){
-        API.sendChat("/me 「CNB」" + userName3 + " used Skip.");
+        API.sendChat("/me 「NB」" + userName3 + " used Skip.");
        }
       break;
       case'!rcs':
         
-        API.sendChat("「CNB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
+        API.sendChat("「NB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         cooldown();
       break;
       case'!helprcs':
        
-        API.sendChat("「CNB」The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
+        API.sendChat("「NB」The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
         cooldown();
       break;
       case'!blacklists':
        
-        API.sendChat("「CNB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
+        API.sendChat("「NB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
       break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
@@ -148,16 +151,16 @@ function full(data){
       //break;
       case'!resdj':
        
-        API.sendChat("「CNB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
+        API.sendChat("「NB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         cooldown();
       break;
       //case'!magic':
-        //API.sendChat( "「CNB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ ");
+        //API.sendChat( "「NB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ ");
         //cooldown();
       //break;
       case'!cmd':
        
-        API.sendChat("「CNB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits, !uploaders, !stab, !flirt, !donvoo, !credits, !hug, !pizza");
+        API.sendChat("「NB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits, !uploaders, !stab, !flirt, !donvoo, !credits, !hug, !pizza");
         cooldownLong();
       break;
       case'!nuvm':
@@ -166,34 +169,34 @@ function full(data){
         cooldownLong();
       break;
       case'!randomevent':
-        var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... "];
+        var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," "];
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
-        API.sendChat("「CNB」" + userName + randomAnswer);
+        API.sendChat("「NB」" + userName + randomAnswer);
       break;
       case'!shutdown':
         if(data.uid === 5010460){
          
-            API.sendChat("/me 「CNB」Nuvm, you hated me. I knew it... </3 Shutting down.");
+            API.sendChat("/me 「NB」Nuvm, you hated me. I knew it... </3 Shutting down.");
             API.off(API.CHAT,full);
           }
         else if(userRole3){
          
-            API.sendChat("/me 「CNB」Hosts hate me... I knew it.. :'( </3 Shutting down.");
+            API.sendChat("/me 「NB」Hosts hate me... I knew it.. :'( </3 Shutting down.");
             API.off(API.CHAT,full);
           }
       break;
       case'!donvoo':
         if(data.uid === 4537120){
          
-          API.sendChat("「CNB」I must confess! Donvoo... donvoo has always been the one to be so gentle, caring and smexy. Th-that's why.. :yellow_heart::blue_heart::blush::blue_heart::yellow_heart:");
+          API.sendChat("「NB」I must confess! Donvoo... donvoo has always been the one to be so gentle, caring and smexy. Th-that's why.. :yellow_heart::blue_heart::blush::blue_heart::yellow_heart:");
           cooldown();
         } else if(userRole2) {
          
-          API.sendChat("「CNB」Sorry, this command is not for you.");
+          API.sendChat("「NB」Sorry, this command is not for you.");
           cooldown();
         } else {
          
-          API.sendChat("「CNB」Skrubs can't use this command, sorry. :kappa:");
+          API.sendChat("「NB」Skrubs can't use this command, sorry. :kappa:");
           cooldown();
         }
       break;
@@ -202,24 +205,24 @@ function full(data){
         var random = choices[Math.floor(Math.random()*choices.length)];
         if(data.uid === 3852661){
          
-            API.sendChat("「CNB」Kage says: I am the :watermelon: God. ");
-            qkCd;
-            API.sendChat("「CNB」 " + random);
+            API.sendChat("「NB」Kage says: I am the :watermelon: God. ");
+            setTimeout(400);
+            API.sendChat("「NB」 " + random);
             cooldown();
         } else {
          
-            API.sendChat("「CNB」 " + random);
+            API.sendChat("「NB」 " + random);
             cooldown();
         }
       break;
       case'!uploaders':
        
-        API.sendChat("「CNB」Here's a link to the YouTube channels of our staff: [http://donvoo.github.io/uploaders]");
+        API.sendChat("「NB」Here's a link to the YouTube channels of our staff: [http://donvoo.github.io/uploaders]");
         cooldownLong();
       break;
       case'https://33.media.tumblr.com/0f3e68fc2dd193659ff12b4555333a9f/tumblr_myr7fcu22U1rhqawao1_500.gif':
        
-        API.sendChat("/me 「CNB」☢Flandre Scarlet uses ClearChat!☢");
+        API.sendChat("/me 「NB」☢Flandre Scarlet uses ClearChat!☢");
         cooldownLong();
       break;
       case'!update':
@@ -228,13 +231,13 @@ function full(data){
       break;
       case'!credits':
        
-        API.sendChat("「CNB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
+        API.sendChat("「NB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
         cooldown();
       break;
       case'!fruit':
         var fruits = ["an :apple:apple:apple:!","a :watermelon:watermelon:watermelon:!","a :banana:banana:banana:!","a :pineapple:pineapple:pineapple:!","a :strawberry:strawberry:strawberry:!","a :peach:peach:peach:!"];
         var fruitSelection = fruits[Math.floor(Math.random()*fruits.length)];
-          API.sendChat("「CNB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection);
+          API.sendChat("「NB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection);
           cooldown();
       break;
     }
@@ -242,27 +245,27 @@ function full(data){
       case'!ping':
         if(userRoleIs0){
          
-          API.sendChat("「CNB」" + userName2 + " No Pingerino Plserino");
+          API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
           cooldownLong();
         } else if(userRole0){
          
-          API.sendChat("「CNB」" + userName2 + " No Pingerino Plserino");
+          API.sendChat("「NB」" + userName2 + " No Pingerino Plserino");
           cooldown();
         }
       break;
       case'!swap':
        if(userRole1){
-        API.sendChat("/me 「CNB」" + userName3 + " used Swap.");
+        API.sendChat("/me 「NB」" + userName3 + " used Swap.");
        }
       break;
       case'!rcs':
        
-        API.sendChat("「CNB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
+        API.sendChat("「NB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         cooldown();
       break;
       case'!helprcs':
        
-        API.sendChat("「CNB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
+        API.sendChat("「NB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
         cooldown();
       break;
       case'!call':
@@ -270,54 +273,54 @@ function full(data){
       break;
       case'!adv':
        
-        API.sendChat("「CNB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+        API.sendChat("「NB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
         cooldown();
       break;
       case'!spam':
        
-        API.sendChat("「CNB」" + userTarget6 + ", please don't spam.");
+        API.sendChat("「NB」" + userTarget6 + ", please don't spam.");
         cooldown();
       break;
       case'!resdj':
        
-        API.sendChat("「CNB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
+        API.sendChat("「NB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         cooldown();
       break;
       case'!poke1':
        
-        API.sendChat("「CNB」:kappa: " + userName + " poked " + userTarget7 + "! :kappa:");
+        API.sendChat("「NB」:kappa: " + userName + " poked " + userTarget7 + "! :kappa:");
         cooldown();
       break;
       case'!poke2':
        
-        API.sendChat("「CNB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget7 + "! ( ͡° ͜ʖ ͡°)");
+        API.sendChat("「NB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget7 + "! ( ͡° ͜ʖ ͡°)");
         cooldown();
       break;
       case'!magic':
        
-        API.sendChat( "「CNB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget7);
+        API.sendChat( "「NB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget7);
         cooldown();
       break;
       case'!hug':
        
-        API.sendChat("「CNB」" + userName + " gives a hug to " + userTarget5 + " !");
+        API.sendChat("「NB」" + userName + " gives a hug to " + userTarget5 + " !");
         cooldown();
       break;
       case'!cmd':
        
-        API.sendChat("「CNB」" + userTarget5 + " Commands: !call, !watermelon, !credits, !cmd, !donvoo, !uploaders, !nattvoo. Commands requiring @user: !rcs, !helprcs, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !hug, !stab, !flirt, !pizza");
+        API.sendChat("「NB」" + userTarget5 + " Commands: !call, !watermelon, !credits, !cmd, !donvoo, !uploaders, !nattvoo. Commands requiring @user: !rcs, !helprcs, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !hug, !stab, !flirt, !pizza");
         cooldownLong();
       break;
       case'!pizza':
         if(data.uid === 3430555){
          
-          API.sendChat("「CNB」:pizza::pizza: Pizza for @HiBiscuits! :pizza::pizza:");
+          API.sendChat("「NB」:pizza::pizza: Pizza for @HiBiscuits! :pizza::pizza:");
           
-          API.sendChat("「CNB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
+          API.sendChat("「NB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
           cooldown();
         } else {
          
-          API.sendChat("「CNB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
+          API.sendChat("「NB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
           cooldown();
         }
       break;
@@ -326,63 +329,63 @@ function full(data){
         var selection = choose[Math.floor(Math.random()*choose.length)];
         if(userRole0){
          
-          API.sendChat("「CNB」" + userName + " says to " + userTarget7 + ": Hey smexy, " + selection);
+          API.sendChat("「NB」" + userName + " says to " + userTarget7 + ": Hey smexy, " + selection);
           cooldown();
         } else {
          
-          API.sendChat("「CNB」" + userName + " says to " + userTarget7 + ": Hey, " + selection);
+          API.sendChat("「NB」" + userName + " says to " + userTarget7 + ": Hey, " + selection);
           cooldown();
         }
       break;
       case'!stab':
         if(userRole3){
-          var choose5 = ['「CNB」" + userName + " tried to stab " + userTarget6 + ", and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose5 = ['「NB」" + userName + " tried to stab " + userTarget6 + ", and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random2 = choose5[Math.floor(Math.random()*choose5.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random2);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random2);
           cooldownShort();
         } else if(userRole2){
           var choose2 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random3 = choose2[Math.floor(Math.random()*choose2.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random3);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random3);
           cooldown();
         } else if(userRole1) {
           var choose3 = [', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random4 = choose3[Math.floor(Math.random()*choose3.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random4);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random4);
           cooldown();
         } else if(userRole0) {
           var choose4 = [', and succeeded!"',', but failed!"'];
           var random5 = choose4[Math.floor(Math.random()*choose4.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random5);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random5);
           cooldown();
         } else if(userRoleIs0){
           var choose6 = [', and succeeded!"',', but failed!"',', but failed!"'];
           var random6 = choose6[Math.floor(Math.random()*choose6.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random6);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random6);
           cooldown();
         } else {
           var choose7 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
           var random7 = choose7[Math.floor(Math.random()*choose7.length)];
           
-          API.sendChat("「CNB」" + userName + " tried to stab " + userTarget6 + random7);
+          API.sendChat("「NB」" + userName + " tried to stab " + userTarget6 + random7);
           cooldownShort();
         }
       break;
       case'!fresdj':
        
-        API.sendChat("「CNB」" + userName4 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        API.sendChat("「NB」" + userName4 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
         cooldown();
       break;
       case'!natvoo':
         var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
         var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
         
-        API.sendChat("「CNB」" + userName + soRandom);
+        API.sendChat("「NB」" + userName + soRandom);
         cooldownLong();
       break;
     }
