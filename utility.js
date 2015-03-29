@@ -4,6 +4,8 @@
 //As well as asking for new ones!
  
 //Changelog
+//v1.0
+//Official Release of NoobBot.
 //v0.7
 //Created utility mode.
  
@@ -98,7 +100,7 @@ function utility(data){
             API.sendChat("/me 「NB Utility」was disabled.");
             API.off(API.CHAT,utility);
           }
-        else if(userRole3){
+        else if(userRole2){
             API.sendChat("/me 「NB Utility」was disabled.");
             API.off(API.CHAT,utility);
           }
