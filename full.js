@@ -7,10 +7,11 @@
 //v0.62.13
 //Added !fruit and !randomevent commands.
 //Changed version system (again).
+//Tweaked var qkCd to 200ms.
 //v0.6.0.4
 //Fixed swap and skip to trigger on Bouncer+.
 //v0.6.0.2
-//Tweaked var qkCd; increased from 100ms to 400ms.
+//Tweaked var qkCd from 100ms to 400ms.
 //v0.6.0
 //Added var qkCd, which delays the answer to a command to let the main bot delete the command before sending the message.
 //v0.5.23
@@ -233,7 +234,7 @@ function full(data){
       case'!fruit':
         var fruits = ["an :apple:apple:apple:!","a :watermelon:watermelon:watermelon:!","a :banana:banana:banana:!","a :pineapple:pineapple:pineapple:!","a :strawberry:strawberry:strawberry:!","a :peach:peach:peach:!"];
         var fruitSelection = fruits[Math.floor(Math.random()*fruits.length)];
-          API.sendChat("「CNB」" + userName + "plunged his/her hand into the fruit basket.... and found " + fruitSelection);
+          API.sendChat("「CNB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection);
           cooldown();
       break;
     }
