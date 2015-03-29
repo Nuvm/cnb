@@ -4,6 +4,8 @@
 //As well as asking for new ones!
  
 //Changelog
+//v1.0.01
+//Changed enabling/disabling to Manager+
 //v1.0
 //Official Release of NoobBot.
 //Changed bot's name to NoobBot.
