@@ -97,11 +97,11 @@ function utility(data){
       break;
       case'!disable utility':
         if(data.uid === 5010460){
-            API.sendChat("/me 「NB Utility」was disabled.");
+            API.sendChat("/me 「NB Utility」was disabled by " + userName3 + ".");
             API.off(API.CHAT,utility);
           }
         else if(userRole2){
-            API.sendChat("/me 「NB Utility」was disabled.");
+            API.sendChat("/me 「NB Utility」was disabled by " + userName3 + ".");
             API.off(API.CHAT,utility);
           }
       break;
