@@ -70,7 +70,7 @@
  
 API.chatLog("「NB」is now running!", true);
 var startMsg = "「NB」v1.0 is now running! Type !cmd for a list of commands.";
-//API.sendChat(startMsg);
+API.sendChat(startMsg);
 API.on(API.CHAT,full);
 commandWait = true;
 
@@ -173,15 +173,15 @@ function full(data){
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
         API.sendChat("「NB」" + userName + randomAnswer);
       break;
-      case'!shutdown':
+      case'!disable':
         if(data.uid === 5010460){
          
-            API.sendChat("/me 「NB」Nuvm, you hated me. I knew it... </3 Shutting down.");
+            API.sendChat("/me 「NB」has been disabled by " + userName3 + ".");
             API.off(API.CHAT,full);
           }
-        else if(userRole3){
+        else if(userRole2){
          
-            API.sendChat("/me 「NB」Hosts hate me... I knew it.. :'( </3 Shutting down.");
+            API.sendChat("/me 「NB」has been disabled by " + userName3 + ".");
             API.off(API.CHAT,full);
           }
       break;
@@ -224,10 +224,6 @@ function full(data){
        
         API.sendChat("/me 「NB」☢Flandre Scarlet uses ClearChat!☢");
         cooldownLong();
-      break;
-      case'!update':
-       
-        API.sendChat("/me //reloading to update: " + userTarget8);
       break;
       case'!credits':
        
