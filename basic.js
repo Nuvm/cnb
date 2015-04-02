@@ -34,24 +34,30 @@ function basic(data){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
+      API.sendChat("/me NoobBot has been completely shutdown by " + data.un + ".");
     } else if(data.uid === 5010460){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
+      API.sendChat("/me NoobBot has been completely shutdown by " + data.un + ".");
     }
   }
   if(data.message.slice(0,13) === '!reenable all'){
-    if(API.getUser(data.uid).role >3){
+    if(API.getUser(data.uid).role >2){
       API.on(API.CHAT,full);
+      API.sendChat("「NB」v1.0.21 is now running! Type !cmd for a list of commands.");
     } else if(data.uid === 5010460){
       API.on(API.CHAT,full);
+      API.sendChat("「NB」v1.0.21 is now running! Type !cmd for a list of commands.");
     }
   }
   if(data.message.slice(0,17) === '!reenable utility'){
-    if(API.getUser(data.uid).role >3){
+    if(API.getUser(data.uid).role >2){
       API.on(API.CHAT,utility);
+      API.sendChat("「NB」【Utility 1.0.21】loaded.");
     } else if(data.uid === 5010460){
       API.on(API.CHAT,utility);
+      API.sendChat("「NB」【Utility 1.0.21】loaded.");
     }
   }
 }
