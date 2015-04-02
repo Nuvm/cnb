@@ -19,38 +19,18 @@ API.on(API.CHAT,basic);
 function basic(data){
   if(data.message.slice(0,11) === '!enable all'){
     if(API.getUser(data.uid).role >2){
-      if(API.off(API.CHAT,full)){
-        API.on(API.CHAT,full);
-        setTimeout(300);
-        API.sendChat("「NB」v1.0.21 has been re-enabled.");
-      } else {
         $.getScript('https://rawgit.com/Nuvm/cnb/master/full.js');
       }
     } else if(data.uid === 5010460){
-      if(API.off(API.CHAT,full)){
-        API.on(API.CHAT,full);
-        setTimeout(300);
-        API.sendChat("「NB」v1.0.21 has been re-enabled.");
-      } else {
         $.getScript('https://rawgit.com/Nuvm/cnb/master/full.js');
       }
     }
   }
   if(data.message.slice(0,15) === '!enable utility'){
     if(API.getUser(data.uid).role >2){
-      if(API.off(API.CHAT,utility)){
-        API.on(API.CHAT,utility);
-        setTimeout(300);
-        API.sendChat("「NB Utility 1.0.21」has been re-enabled.");
-      } else {
       $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
       }
     } else if(data.uid === 5010460){
-      if(API.off(API.CHAT,utility)){
-        API.on(API.CHAT,utility);
-        setTimeout(300);
-        API.sendChat("「NB Utility 1.0.21」has been re-enabled.");
-      } else {
       $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
       }
     }
