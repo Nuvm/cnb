@@ -24,16 +24,12 @@ function basic(data){
     } else if(data.uid === 5010460){
         $.getScript('https://rawgit.com/Nuvm/cnb/master/full.js');
       }
-    }
-  }
   if(data.message.slice(0,15) === '!enable utility'){
     if(API.getUser(data.uid).role >2){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
-      }
     } else if(data.uid === 5010460){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
       }
-    }
   }
   if(data.message.slice(0,13) === '!reenable all'){
       if(API.getUser(data.uid).role >2){
