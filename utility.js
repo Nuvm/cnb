@@ -4,13 +4,18 @@
 //As well as asking for new ones!
  
 //Changelog
+//v1.0.21
+//Added setTimeout before API.sendChat to most commands.
+//v1.0.10
+//Added command !fresdj.
+//Fixed the list of commands in !cmd.
 //v1.0
 //Official Release of NoobBot.
 //v0.7
 //Created utility mode.
  
 API.chatLog("「NB Utility」is now on.", true);
-var startMsgUtility = "「NB Utility」Loaded.";
+var startMsgUtility = "「NB」【Utility 1.0.21】loaded.";
 API.sendChat(startMsgUtility);
 API.on(API.CHAT,utility);
 commandWait = true;
@@ -61,19 +66,28 @@ function utility(data){
         }
       break;
       case'!skip':
+        setTimeout(200);
        if(userRole1){
         API.sendChat("/me 「NB」" + userName3 + " skipped the current song.");
        }
       break;
+      case'!fresdj':
+        setTimeout(200);
+        API.sendChat("「NB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        cooldown();
+      break;
       case'!rcs':
+        setTimeout(200);
         API.sendChat("「NB」RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         cooldown();
       break;
       case'!helprcs':
+        setTimeout(200);
         API.sendChat("「NB」The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");
         cooldown();
       break;
       case'!blacklists':
+        setTimeout(200);
         API.sendChat("「NB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
       break;
       case'!call':
@@ -88,24 +102,29 @@ function utility(data){
         //cooldown();
       //break;
       case'!resdj':
+        setTimeout(200);
         API.sendChat("「NB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         cooldown();
       break;
       case'!cmd':
-        API.sendChat("「NB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !poke1, !poke2, !magic, !watermelon, !cmd, !credits, !uploaders, !stab, !flirt, !donvoo, !credits, !hug, !pizza");
+        setTimeout(200);
+        API.sendChat("「NB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !cmd, !credits, !uploaders, !blacklists");
         cooldownLong();
       break;
       case'!disable utility':
         if(data.uid === 5010460){
-            API.sendChat("/me 「NB Utility」was disabled by " + userName3 + ".");
             API.off(API.CHAT,utility);
+            setTimeout(200);
+            API.sendChat("/me 「NB Utility」was disabled.");
           }
         else if(userRole2){
-            API.sendChat("/me 「NB Utility」was disabled by " + userName3 + ".");
             API.off(API.CHAT,utility);
+            setTimeout(200);
+            API.sendChat("/me 「NB Utility」was disabled.");
           }
       break;
       case'!uploaders':
+        setTimeout(200);
         API.sendChat("「NB」Here's a link to the YouTube channels of our staff: [http://donvoo.github.io/uploaders]");
         cooldownLong();
       break;
@@ -114,6 +133,7 @@ function utility(data){
         cooldownLong();
       break;
       case'!credits':
+        setTimeout(200);
         API.sendChat("「NB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
         cooldown();
       break;
@@ -124,26 +144,37 @@ function utility(data){
         API.sendChat("/me 「NB」" + userName3 + " used Swap.");
        }
       break;
+      case'!fresdj':
+        setTimeout(200);
+        API.sendChat("「NB」" + userName4 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        cooldown();
+      break;
       case'!rcs':
+        setTimeout(200);
         API.sendChat("「NB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         cooldown();
       break;
       case'!helprcs':
+        setTimeout(200);
         API.sendChat("「NB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
         cooldown();
       break;
       case'!call':
+        setTimeout(200);
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
       case'!adv':
+        setTimeout(200);
         API.sendChat("「NB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
         cooldown();
       break;
       case'!spam':
+        setTimeout(200);
         API.sendChat("「NB」" + userTarget6 + ", please don't spam.");
         cooldown();
       break;
       case'!resdj':
+        setTimeout(200);
         API.sendChat("「NB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         cooldown();
       break;
