@@ -45,7 +45,7 @@ function utility(data){
   var userName4 = "[" + data.un + "]";
   var userTarget = data.message.split('@');
   if (commandWait === true){
-    switch(data.message.split('@')[1] != undefined){
+    switch(data.message){
       case'!ping':
         API.sendChat("「NB」" + userName2 + " Pong!");
         cooldown();
@@ -78,14 +78,14 @@ function utility(data){
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
-      case'!adv':
-        API.sendChat("「NB」Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-        cooldown();
-      break;
-      case'!spam':
-        API.sendChat("「NB」Please don't spam!");
-        cooldown();
-      break;
+      //case'!adv':
+        //API.sendChat("「NB」Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+        //cooldown();
+      //break;
+      //case'!spam':
+        //API.sendChat("「NB」Please don't spam!");
+        //cooldown();
+      //break;
       case'!resdj':
         setTimeout(350);
         API.sendChat("「NB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
@@ -142,11 +142,11 @@ function utility(data){
         API.sendChat("「NB」" + userTarget + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         cooldown();
       break;
-      case'!helprcs':
-        setTimeout(350);
-        API.sendChat("「NB」" + userTarget + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
-        cooldown();
-      break;
+      //case'!helprcs':
+        //setTimeout(350);
+        //API.sendChat("「NB」" + userTarget + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
+        //cooldown();
+      //break;
       case'!call':
         setTimeout(350);
         API.chatLog("#CALLED# " + userName3 + " called you!");
