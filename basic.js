@@ -4,8 +4,8 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.0.01
-//Changed enabling/disabling to Manager+
+//v1.0.21
+//Quick fixes.
 //v1.0
 //Official Release of NoobBot.
 //Changed bot's name to NoobBot.
@@ -30,27 +30,25 @@ function basic(data){
     }
   }
   if(data.message.slice(0,18) === '!complete shutdown'){
-    if(API.getUser(data.uid).role >2){
+    if(API.getUser(data.uid).role >3){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
-      API.sendChat("NoobBot has been completely shutdown.")
     } else if(data.uid === 5010460){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
-      API.sendChat("NoobBot has been completely shutdown.")
     }
   }
   if(data.message.slice(0,13) === '!reenable all'){
-    if(API.getUser(data.uid).role >2){
+    if(API.getUser(data.uid).role >3){
       API.on(API.CHAT,full);
     } else if(data.uid === 5010460){
       API.on(API.CHAT,full);
     }
   }
   if(data.message.slice(0,17) === '!reenable utility'){
-    if(API.getUser(data.uid).role >2){
+    if(API.getUser(data.uid).role >3){
       API.on(API.CHAT,utility);
     } else if(data.uid === 5010460){
       API.on(API.CHAT,utility);
