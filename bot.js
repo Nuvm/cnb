@@ -149,6 +149,9 @@ function utility(data){
           cooldown();
         }
       break;
+      case'!makenightcore':
+        setTimeout(function(){API.sendChat("「UB」Here's a link that explains how to make nightcore:");},600);
+      break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
