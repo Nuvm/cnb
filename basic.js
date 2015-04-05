@@ -43,4 +43,4 @@ function basic(data){
     }
   }
 }
-
+$.getScript('https://rawgit.com/Nuvm/cnb/master/bot.js')
