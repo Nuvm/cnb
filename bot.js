@@ -6,7 +6,7 @@
 //Changelog
 //v1.2.10
 //Added DerpStaff Mode.
-{//v1.2
+//{v1.2
 //Utility Mode is now the mode by Default.
 //v1.1
 //Many major fixes, including command fixes.
@@ -18,8 +18,8 @@
 //v1.0
 //Official Release of NoobBot.
 //v0.7
-//Created utility mode.
-}
+//Created utility mode.}
+
  
 API.on(API.CHAT,utility);
 commandWait = true;
