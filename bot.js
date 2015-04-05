@@ -47,6 +47,7 @@ function utility(data){
         if(userRoleIs0){
           API.sendChat(userName + ", don't ask for skips.");
         }
+        cooldown();
       break;
       case'!ping':
         if(userRole0){
@@ -72,6 +73,7 @@ function utility(data){
       case'!blacklist':
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
       },600);
+      cooldown();
         break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
@@ -130,11 +132,11 @@ function utility(data){
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
-        setTimeout(function(){API.sendChat("「UB」" + userName + randomAnswer);
-      },600);
-        break;
+        setTimeout(function(){API.sendChat("「UB」" + userName + randomAnswer);},600);
+        cooldown();
+      break;
       case'!enable derpstaff':
-        if(confirm(user.un + "(" + user.uid + ") wants to enable {extra.js}."))
+        if(confirm(data.un + "(" + data.uid + ") wants to enable {extra.js}.") === true && userRole2)
         $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
         API.sendChat("「UB」DerpyStaff Mode (beta) enabled.");
       break;
@@ -151,6 +153,11 @@ function utility(data){
       break;
       case'!makenightcore':
         setTimeout(function(){API.sendChat("「UB」Here's a link that explains how to make nightcore:");},600);
+        cooldown();
+      break;
+      case'!join':
+        setTimeout(function(){API.sendChat("/me 「UB」" + userName + ", don't ask for skips.");},600);
+        cooldown();
       break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
@@ -173,12 +180,12 @@ function utility(data){
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
       case'!adv':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
         },600);
         cooldown();
       break;
       case'!spam':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget + ", please don't spam.");
+        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget + ", please don't spam.");
         },600);
         cooldown();
       break;
@@ -209,4 +216,4 @@ function toAtOrNotToAt(){
 }
 API.chatLog("「Utility Bot 1.2」is now on.", true);
 var startMsgUtility = "「Utility Bot 1.2」loaded.";
-API.sendChat(startMsgUtility);
+//API.sendChat(startMsgUtility);
