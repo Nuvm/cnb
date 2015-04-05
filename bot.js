@@ -4,11 +4,9 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.10
-//Added DerpStaff Mode.
-//{v1.2
+//v1.2
 //Utility Mode is now the mode by Default.
-//v1.1
+//{v1.1
 //Many major fixes, including command fixes.
 //v1.0.21
 //Added setTimeout before API.sendChat to most commands.
@@ -19,7 +17,6 @@
 //Official Release of NoobBot.
 //v0.7
 //Created utility mode.}
-
  
 API.on(API.CHAT,utility);
 commandWait = true;
@@ -109,7 +106,11 @@ function utility(data){
             }
       break;
       case'!uploaders':
-        setTimeout(function(){API.sendChat("「UB」Here's a link to the YouTube channels of our staff: [http://donvoo.github.io/uploaders]");},600);
+        setTimeout(function(){API.sendChat("「UB」Here's a link to the YouTube channels of our staff: [http://donvoo.me/uploaders]");},600);
+        cooldown();
+      break;
+      case'!ships':
+        setTimeout(function(){API.sendChat("「UB」Here's a link to the Ships in this room: [http://donvoo.me/Ships]");},600);
         cooldown();
       break;
       case'https://33.media.tumblr.com/0f3e68fc2dd193659ff12b4555333a9f/tumblr_myr7fcu22U1rhqawao1_500.gif':
@@ -133,12 +134,9 @@ function utility(data){
       },600);
         break;
       case'!enable derpstaff':
+        if(confirm(user.un + "(" + user.uid + ") wants to enable {extra.js}."))
         $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
-        API.sendChat("「UB」DerpyStaff Mode enabled.");
-      break;
-      case'!enable derpstaffbeta':
-        $.getScript('https://rawgit.com/Nuvm/cnv/To-Patch/extra.js');
-        API.sendChat("「UB」DerpyStaff Mode(beta) enabled.");
+        API.sendChat("「UB」DerpyStaff Mode (beta) enabled.");
       break;
       case'!donvoo':
         if(data.uid === 4537120){
