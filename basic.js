@@ -4,7 +4,10 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.1
+//v1.2
+//Utility Mode is now the mode by Default.
+//NoobBot is now Utility Bot.
+//{v1.1
 //Many major fixes, including command fixes.
 //v1.0.21
 //Quick fixes.
@@ -13,40 +16,17 @@
 //Changed bot's name to NoobBot.
 //Added reenable commands.
 //v0.7
-//Created basic mode.
+//Created basic mode.}
 
 API.on(API.CHAT,basic);
 function basic(data){
-  if(data.message.slice(0,11) === '!enable all'){
-    if(API.getUser(data.uid).role >2){
-      $.getScript('https://rawgit.com/Nuvm/cnb/master/full.js');
-    } else if(data.uid === 5010460){
-      $.getScript('https://rawgit.com/Nuvm/cnb/master/full.js');
-    }
-  }
   if(data.message.slice(0,15) === '!enable utility'){
     if(API.getUser(data.uid).role >2){
-      $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
-    } else if(data.uid === 5010460){
-      $.getScript('https://rawgit.com/Nuvm/cnb/master/utility.js');
-    }
-  }
-  if(data.message.slice(0,13) === '!reenable all'){
-    if(API.getUser(data.uid).role >2){
-        API.on(API.CHAT,full);
-        API.sendChat("「NB」v1.0.21 is now running! Type !cmd for a list of commands.");
-    } else if(data.uid === 5010460){
-        API.on(API.CHAT,full);
-        API.sendChat("「NB」v1.0.21 is now running! Type !cmd for a list of commands.");
-      }
-  }
-  if(data.message.slice(0,17) === '!reenable utility'){
-    if(API.getUser(data.uid).role >2){
       API.on(API.CHAT,utility);
-      API.sendChat("「NB」【Utility 1.0.21】loaded.");
+      API.sendChat("「UB」Utility Bot reloaded.");
     } else if(data.uid === 5010460){
       API.on(API.CHAT,utility);
-      API.sendChat("「NB」【Utility 1.0.21】loaded.");
+      API.sendChat("「UB」Utility Bot reloaded.");
     }
   }
   if(data.message.slice(0,18) === '!complete shutdown'){
@@ -54,12 +34,12 @@ function basic(data){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
-      API.sendChat("/me NoobBot has been completely shutdown by " + data.un + ".");
+      API.sendChat("/me Utility Bot has been completely shutdown by " + data.un + ".");
     } else if(data.uid === 5010460){
       API.off(API.CHAT,basic);
       API.off(API.CHAT,full);
       API.off(API.CHAT,utility);
-      API.sendChat("/me NoobBot has been completely shutdown by " + data.un + ".");
+      API.sendChat("/me Utility Bot has been completely shutdown by " + data.un + ".");
     }
   }
 }
