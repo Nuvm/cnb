@@ -17,7 +17,7 @@
 //Official Release of NoobBot.
 //v0.7
 //Created utility mode.}
- 
+
 API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
@@ -156,11 +156,11 @@ function utility(data){
         cooldown();
       break;
       case'!join':
-        setTimeout(function(){API.sendChat("/me 「UB」" + userName + ", don't ask for skips.");},600);
+        setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},600);
         cooldown();
       break;
     }
-    switch(data.message.slice(0,data.message.indexOf(" "))){
+    switch(data.message){
       case'!fresdj':
         setTimeout(function(){API.sendChat("「UB」" + userName4 + " " + userTarget + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
         },600);
@@ -216,4 +216,5 @@ function toAtOrNotToAt(){
 }
 API.chatLog("「Utility Bot 1.2」is now on.", true);
 var startMsgUtility = "「Utility Bot 1.2」loaded.";
-//API.sendChat(startMsgUtility);
+API.sendChat(startMsgUtility);
+//data.message.slice(0,data.message.indexOf(" "))
