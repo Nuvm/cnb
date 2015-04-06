@@ -4,9 +4,13 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2
+//v1.2.3
+//Fixed DerpStaff Mode.
+//Fixed some global issues.
+//Commands now are properly mentionnable.
+//{v1.2
 //Utility Mode is now the mode by Default.
-//{v1.1
+//v1.1
 //Many major fixes, including command fixes.
 //v1.0.21
 //Added setTimeout before API.sendChat to most commands.
@@ -40,15 +44,25 @@ function utility(data){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
-  var userTarget = data.message.split('@');
+  var userTarget0 = data.message.slice(0,255);
+   var userTarget1 = data.message.slice(1,255);
+   var userTarget2 = data.message.slice(2,255);
+   var userTarget3 = data.message.slice(3,255);
+   var userTarget4 = data.message.slice(4,255);
+   var userTarget5 = data.message.slice(5,255);
+   var userTarget6 = data.message.slice(6,255);
+   var userTarget7 = data.message.slice(7,255);
+   var userTarget8 = data.message.slice(8,255);
+   var userTarget9 = data.message.slice(9,255);
+   var userTarget10 = data.message.slice(10,255);
+   var userTarget11 = data.message.slice(11,155);
+   var userTarget12 = data.message.slice(12,255);
+   var userTarget13 = data.message.slice(13,255);
   if (commandWait === true){
+    if(data.message.slice(0,4) === 'skip'){
+      API.sendChat(userName + ", don't ask for skips.");
+    }
     switch(data.message){
-      case'skip':
-        if(userRoleIs0){
-          API.sendChat(userName + ", don't ask for skips.");
-        }
-        cooldown();
-      break;
       case'!ping':
         if(userRole0){
           API.sendChat("「UB」" + userName2 + " Pong!");
@@ -56,7 +70,7 @@ function utility(data){
         }
       break;
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        setTimeout(function(){API.sendChat("「UB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
         },600);
         cooldown();
       break;
@@ -102,7 +116,7 @@ function utility(data){
             setTimeout(function(){API.sendChat("/me 「NB Utility」was disabled.");
           },600);
             }
-        else if(userRole2){
+        else if(userRole2 && data.uid !== 3684485){
             API.off(API.CHAT,utility);
             setTimeout(function(){API.sendChat("/me 「NB Utility」was disabled.");},600);
             }
@@ -136,23 +150,29 @@ function utility(data){
         cooldown();
       break;
       case'!enable derpstaff':
-        if(confirm(data.un + "(" + data.uid + ") wants to enable {extra.js}.") === true && userRole2)
-        $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
-        API.sendChat("「UB」DerpyStaff Mode (beta) enabled.");
+        if(confirm(data.un + "(" + data.uid + ") wants to enable {extra.js}.") === true){
+          if(data.uid === 5010460){
+            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
+            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
+          } else if(userRole2) {
+            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
+            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
+          }
+        }
       break;
       case'!donvoo':
         if(data.uid === 4537120){
          setTimeout(function(){API.sendChat("「UB」I must confess! Donvoo... donvoo has always been the one to be so gentle, caring and smexy. Th-that's why.. :yellow_heart::blue_heart::blush::blue_heart::yellow_heart:");
           },600);
           cooldown();
-        } else if(userRole2) {
+        } else {
          setTimeout(function(){API.sendChat("「UB」Sorry, this command is not for you.");
           },600);
           cooldown();
         }
       break;
       case'!makenightcore':
-        setTimeout(function(){API.sendChat("「UB」Here's a link that explains how to make nightcore:");},600);
+        setTimeout(function(){API.sendChat("「UB」Here's a link that explains how to make nightcore: [http://nazr.in/UEM]");},600);
         cooldown();
       break;
       case'!join':
@@ -160,19 +180,19 @@ function utility(data){
         cooldown();
       break;
     }
-    switch(data.message){
+    switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName4 + " " + userTarget + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        setTimeout(function(){API.sendChat("「UB」" + userName4 + " " + userTarget7 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
         },600);
         cooldown();
       break;
       case'!rcs':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
+        setTimeout(function(){API.sendChat("「UB」" + userTarget5 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
         },600);
         cooldown();
       break;
       case'!helprcs':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
+        setTimeout(function(){API.sendChat("「UB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
         },600);
         cooldown();
       break;
@@ -180,17 +200,17 @@ function utility(data){
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
       case'!adv':
-        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
         },600);
         cooldown();
       break;
       case'!spam':
-        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget + ", please don't spam.");
+        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget6 + ", please don't spam.");
         },600);
         cooldown();
       break;
       case'!resdj':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
+        setTimeout(function(){API.sendChat("「UB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         },600);
         cooldown();
       break;
