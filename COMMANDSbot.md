@@ -27,7 +27,7 @@ Manager
 |Command | Arguments |  Description |
 |:------:|:---------:|:--------------------------------------:|
 |!disable | | Disables the bot. |
-|!enable derpstaff | | Enables the DerpStaff Mode... Prepare for spam! And war. (see https://github.com/Nuvm/cnb/master/CMDextra.md for commands) |
+|!enable derpstaff | | Enables the DerpStaff Mode... Prepare for spam! And war. (see https://github.com/Nuvm/cnb/master/COMMANDSextra.md for commands) |
 
 Bouncer
 --------
