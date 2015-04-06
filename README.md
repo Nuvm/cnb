@@ -1,8 +1,5 @@
-# 「CNB」Custom NuvBot
-Custom NuvBot is a mini bot for plug.dj. It's main purpose is to provide additionnal functionality, mostly for information.
+# 「UB」Utility Bot
+Utility Bot is a bot made under the purpose to serve as a side-bot to the main bot of a room. This bot is not made for use without permission. Please, ask permission before using this bot, or you can get: 1. Banned on plug.dj and 2. Banned on github.
 
-#Commands
-##Everyone
-!cmd Shows this page.  !ping Tests if the bot is online  !xp @user Explains briefly how the xp system works.  !rcs @user  Send a link to RCS, a script like PlugCubed and TastyPlug.  !rcshelp @user Get started with RCS.  !call Warns the person running the bot that someone is calling him (When you need staff).  !advertising @user Asks the person to not advertise.  !poke1 @user :kappa: Someone poked @user! :kappa:  !poke2 @user (͡° ͜ʖ ͡°) Someone poked @user! (͡° ͜ʖ ͡°)  !magic @user  (∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ @user
-##Bouncer+
-!kill Shuts down the bot.
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/)  
+<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/StillImage" property="dct:title" rel="dct:type">UtilityBot</span> by [Nuvm](https://github.com/Nuvm) is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](http://creativecommons.org/licenses/by-nc-nd/4.0/).
