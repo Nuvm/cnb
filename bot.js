@@ -120,7 +120,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !cmd, !credits, !uploaders, !blacklists");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [http://nazr.in/UF1]");
         },600);
         cooldown();
       break;
