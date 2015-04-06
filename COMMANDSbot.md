@@ -2,7 +2,9 @@ Utility Bot Commands:
 =========
 
 X specifies a number
+
 arguments between ( ) are optional
+
 Cooldowns are set to 7 seconds.
 
 User-specific 
