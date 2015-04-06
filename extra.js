@@ -101,7 +101,20 @@ function extra(data){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
-  var userTarget = data.message.split('@');
+  var userTarget0 = data.message.slice(0,255);
+   var userTarget1 = data.message.slice(1,255);
+   var userTarget2 = data.message.slice(2,255);
+   var userTarget3 = data.message.slice(3,255);
+   var userTarget4 = data.message.slice(4,255);
+   var userTarget5 = data.message.slice(5,255);
+   var userTarget6 = data.message.slice(6,255);
+   var userTarget7 = data.message.slice(7,255);
+   var userTarget8 = data.message.slice(8,255);
+   var userTarget9 = data.message.slice(9,255);
+   var userTarget10 = data.message.slice(10,255);
+   var userTarget11 = data.message.slice(11,155);
+   var userTarget12 = data.message.slice(12,255);
+   var userTarget13 = data.message.slice(13,255);
   if (commandWait === true){
     switch(data.message){
       case'!magic':
@@ -141,25 +154,32 @@ function extra(data){
           },600);
           cooldown();
       break;
+      case'!natvoo':
+        var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
+        var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
+        setTimeout(function(){API.sendChat("「UB」" + userName + soRandom);
+        },600);
+        cooldown();
+      break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!poke1':
-       setTimeout(function(){API.sendChat("「UB」:kappa: " + userName + " poked " + userTarget + "! :kappa:");
+       setTimeout(function(){API.sendChat("「UB」:kappa: " + userName + " poked " + userTarget7 + "! :kappa:");
         },600);
         cooldown();
       break;
       case'!poke2':
-       setTimeout(function(){API.sendChat("「UB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget + "! ( ͡° ͜ʖ ͡°)");
+       setTimeout(function(){API.sendChat("「UB」( ͡° ͜ʖ ͡°) " + userName + " poked " + userTarget7 + "! ( ͡° ͜ʖ ͡°)");
         },600);
         cooldown();
       break;
       case'!magic':
-       setTimeout(function(){API.sendChat( "「UB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget);
+       setTimeout(function(){API.sendChat( "「UB」(∩ ͡° ͜ʖ ͡°)⊃━☆ﾟ. * ･ ｡ﾟ " + userTarget7);
         },600);
         cooldown();
       break;
       case'!hug':
-       setTimeout(function(){API.sendChat("「UB」" + userName + " gives a hug to " + userTarget + " !");
+       setTimeout(function(){API.sendChat("「UB」" + userName + " gives a hug to " + userTarget5 + " !");
         },600);
         cooldown();
       break;
@@ -167,11 +187,11 @@ function extra(data){
         if(data.uid === 3430555){
           setTimeout(function(){API.sendChat("「UB」:pizza::pizza: Pizza for @HiBiscuits! :pizza::pizza:");
           },600);
-          setTimeout(function(){API.sendChat("「UB」" + userTarget + ", you received a :pizza: from " + userName + " !");
+          setTimeout(function(){API.sendChat("「UB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
           },600);
           cooldown();
         } else {
-          setTimeout(function(){API.sendChat("「UB」" + userTarget + ", you received a :pizza: from " + userName + " !");
+          setTimeout(function(){API.sendChat("「UB」" + userTarget7 + ", you received a :pizza: from " + userName + " !");
           },600);
           cooldown();
         }
@@ -180,60 +200,53 @@ function extra(data){
         var choose = ["the human body is 90% water, and I'm real thirsty.","can I buy you a drink or do you just want the money?","with a mane like that you must be a Leo.","do you have a mirror in your pants? Because I can see myself in them.","are your legs tired? Because you have been running through my dreams all night.","is your father a thief? Because he stole the stars fomr the skies and put them in your eyes.","are you okay? It must have been a long fall from Heaven","I really like that outfit. It would look great crumpled at the end of my bed.","what do you like to eat for breakfast? Oh good, I have that.","I know they say milk does a body good - but damn, how much have you been drinking?","so, are you legal?","I have cable TV.","if I told you that you have a lovely body, would you hold it against me?","did the sun just come out or did you smile at me?","is it hot in here, or is it just you?","do you believe in love at first sight or do I have to walk by you again?","I lost my phone number... Can I have yours?","if you were a burger at McDonald's, I'd call you McBeautiful.","my name's _____. But you can call me.... tonight.","no wonder the sky's gray today - all the blue is in your eyes.","what's your name? Or shall I just call you mine?","if I could rearrange the alphabet, I'd put U and I together.","look at you with all those curves and me with no brakes!","I may not be Fred Flinstone/Wilma Flintstone, but I can sure make your bed rock!","do you have raisins? No? How about a date?","do you have a Band-Aid? 'Cause I skinned my knee when I fell for you.","can I have a picture of you so I can show Santa what I want for Christmas?","my bed is broken. Can I sleep in yours?","I'm not feeling myself tonight. Can I feel you?","my name is _____. Remember that, you'll be screaming it later.","is that a ladder in your stockings or the stairway to Heaven?","I may not be the best looking guy/girl in here, but I'm the only one talking to you.","*licks finger and wipes on his/her shirt* Let's get you out of these wet clothes."];
         var selection = choose[Math.floor(Math.random()*choose.length)];
         if(userRole0){
-          setTimeout(function(){API.sendChat("「UB」" + userName + " says to " + userTarget + ": Hey smexy, " + selection);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " says to " + userTarget7 + ": Hey smexy, " + selection);
           },600);
           cooldown();
         } else {
-          setTimeout(function(){API.sendChat("「UB」" + userName + " says to " + userTarget + ": Hey, " + selection);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " says to " + userTarget7 + ": Hey, " + selection);
           },600);
           cooldown();
         }
       break;
       case'!stab':
         if(userRole3){
-          var choose5 = ['「UB」" + userName + " tried to stab " + userTarget + ", and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose5 = ['", and succeeded!"','", and succeeded!"','", and succeeded!"','", and succeeded!"','", and succeeded!"','", and succeeded!"','", and succeeded!"','", but failed!"'];
           var random2 = choose5[Math.floor(Math.random()*choose5.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random2);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random2);
           },600);
-          cooldownShort();
+          cooldown();
         } else if(userRole2){
-          var choose2 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose2 = ['", and succeeded!"','", and succeeded!"','", and succeeded!"','", but failed!"'];
           var random3 = choose2[Math.floor(Math.random()*choose2.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random3);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random3);
           },600);
           cooldown();
         } else if(userRole1) {
-          var choose3 = [', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose3 = ['", and succeeded!"','", and succeeded!"','", but failed!"'];
           var random4 = choose3[Math.floor(Math.random()*choose3.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random4);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random4);
           },600);
           cooldown();
         } else if(userRole0) {
-          var choose4 = [', and succeeded!"',', but failed!"'];
+          var choose4 = ['", and succeeded!"','", but failed!"'];
           var random5 = choose4[Math.floor(Math.random()*choose4.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random5);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random5);
           },600);
           cooldown();
         } else if(userRoleIs0){
-          var choose6 = [', and succeeded!"',', but failed!"',', but failed!"'];
+          var choose6 = ['", and succeeded!"','", but failed!"','", but failed!"'];
           var random6 = choose6[Math.floor(Math.random()*choose6.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random6);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random6);
           },600);
           cooldown();
         } else {
-          var choose7 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose7 = ['", and succeeded!"','", and succeeded!"','", and succeeded!"','", but failed!"'];
           var random7 = choose7[Math.floor(Math.random()*choose7.length)];
-          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random7);
+          setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget6 + random7);
           },600);
           cooldownShort();
         }
-      break;
-      case'!natvoo':
-        var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
-        var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
-        setTimeout(function(){API.sendChat("「UB」" + userName + soRandom);
-        },600);
-        cooldown();
       break;
     }
   }
