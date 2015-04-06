@@ -4,10 +4,13 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2
+//v1.2.3
+//Fixed commands' displays.
+//Fixed the disable command.
+//{v1.2
 //NoobBot is now UtilityBot.
 //Utility.js is now enabled by default.
-//{v1.1
+//v1.1
 //Many major fixes, including command fixes.
 //Commands !spam, !adv and !magic are now functionnal.
 //v1.0.21
@@ -122,13 +125,13 @@ function extra(data){
         },600);
         cooldown();
       break;
-      case'!disable derpystaff':
+      case'!disable derpstaff':
         if(data.uid === 5010460){
-            API.sendChat("/me 「UB」DerpyStaff Mode has been disabled by " + userName3 + ".");
+            API.sendChat("/me 「UB」DerpStaff Mode has been disabled by " + userName3 + ".");
             API.off(API.CHAT,extra);
           }
         else if(userRole2){
-            API.sendChat("/me 「UB」DerpyStaff Mode has been disabled by " + userName3 + ".");
+            API.sendChat("/me 「UB」DerpStaff Mode has been disabled by " + userName3 + ".");
             API.off(API.CHAT,extra);
           }
       break;
