@@ -4,10 +4,11 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.3
-//Fixed DerpStaff Mode.
-//Fixed some global issues.
-//Commands now are properly mentionnable.
+//v1.2.4
+//Patched alot of commands.
+//Released the github readme for commands.
+//Added the mehspam command.
+//Many, many fixes.
 //{v1.2
 //Utility Mode is now the mode by Default.
 //v1.1
@@ -92,14 +93,27 @@ function utility(data){
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
-      //case'!adv':
-        //API.sendChat("「UB」Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-        //cooldown();
-      //break;
-      //case'!spam':
-        //API.sendChat("「UB」Please don't spam!");
-        //cooldown();
-      //break;
+      case'!adv':
+        if(userRole0){
+          setTimeout(function(){API.sendChat("「UB」Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+          },600);
+        }
+        cooldown();
+      break;
+      case'!spam':
+        if(userRole0){
+          setTimeout(function(){API.sendChat("「UB」Please don't spam!");
+          },600);
+        }
+        cooldown();
+      break;
+      case'!mehspam':
+        if(userRole0){
+          setTimeout(function(){API.sendChat("「UB」Please don't spam the meh button.");
+          },600);
+        }
+        cooldown();
+      break;
       case'!resdj':
         setTimeout(function(){API.sendChat("「UB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
         },600);
@@ -192,21 +206,29 @@ function utility(data){
         cooldown();
       break;
       case'!helprcs':
-        setTimeout(function(){API.sendChat("「UB」" + userTarget9 + " The menu for RCS is located at the top right. You can toggle different settings, which includes changing plug.dj's visual settings. For more info, visit [https://rcs.radiant.dj] .");
+        setTimeout(function(){API.sendChat("「UB」" + userTarget9 + " The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");
         },600);
         cooldown();
       break;
-      case'!call':
-        API.chatLog("#CALLED# " + userName3 + " called you!");
-      break;
       case'!adv':
-        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-        },600);
+        if(userRole0){
+          setTimeout(function(){API.sendChat("/me 「UB」" + userTarget5 + ", advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
+          },600);
+        }
         cooldown();
       break;
       case'!spam':
-        setTimeout(function(){API.sendChat("/me 「UB」" + userTarget6 + ", please don't spam.");
-        },600);
+        if(userRole0){
+          setTimeout(function(){API.sendChat("/me 「UB」" + userTarget6 + ", please don't spam.");
+          },600);
+        }
+        cooldown();
+      break;
+      case'!mehspam':
+        if(userRole0){
+          setTimeout(function(){API.sendChat("/me 「UB」" + userTarget9 + ", please don't spam the meh button.");
+          },600);
+        }
         cooldown();
       break;
       case'!resdj':
