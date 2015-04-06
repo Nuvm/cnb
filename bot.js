@@ -1,5 +1,5 @@
 //Custom NuvBot made and coded by Nuvm.
-//Licensed under the Open GNU License v3.
+//Licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
  
