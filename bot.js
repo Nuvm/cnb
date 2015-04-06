@@ -256,7 +256,7 @@ function toAtOrNotToAt(){
   if (message.indexOf !== -1){
   }
 }
-API.chatLog("「Utility Bot 1.2」is now on.", true);
-var startMsgUtility = "「Utility Bot 1.2」loaded.";
+API.chatLog("「Utility Bot 1.2.4」is now on.", true);
+var startMsgUtility = "「Utility Bot 1.2.4」loaded.";
 API.sendChat(startMsgUtility);
 //data.message.slice(0,data.message.indexOf(" "))
