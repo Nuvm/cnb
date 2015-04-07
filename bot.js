@@ -120,7 +120,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [http://nazr.in/UF1]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !cmd, !credits, !uploaders, !blacklists");
         },600);
         cooldown();
       break;
@@ -233,6 +233,16 @@ function utility(data){
       break;
       case'!resdj':
         setTimeout(function(){API.sendChat("「UB」" + userTarget7 + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
+        },600);
+        cooldown();
+      break;
+      case'!theme2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget7 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        },600);
+        cooldown();
+      break;
+      case'!rules2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget7 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
         },600);
         cooldown();
       break;
