@@ -237,12 +237,12 @@ function utility(data){
         cooldown();
       break;
       case'!theme2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget7 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
         },600);
         cooldown();
       break;
       case'!rules2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget7 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
         },600);
         cooldown();
       break;
