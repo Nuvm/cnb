@@ -68,7 +68,7 @@ function utility(data){
    var userTarget11 = data.message.slice(11,155);
    var userTarget12 = data.message.slice(12,255);
    var userTarget13 = data.message.slice(13,255);
-   var currentVersion = "1.2.5.1238";
+   var currentVersion = "1.2.5.1239";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -145,7 +145,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKA");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKD");
         },600);
         cooldown();
       break;
@@ -174,11 +174,9 @@ function utility(data){
         cooldown();
       break;
       case'!test':
-        setTimeout(function(){API.chatLog("1 second after the command.");},1000);
-        setTimeout(function(){API.chatLog("4 seconds after the command, and 3 seconds after the last message.");},3000);
-        setTimeout(function(){API.chatLog("9 seconds after the command, and 5 seconds after the last message.");},5000);
-        setTimeout(function(){API.sendChat("「UB」This should appear 16 seconds after the command was executed, and 6 seconds after the last chatLog message.");},6000);
-        setTimeout(function(){API.chatLog("/me In italics, 20 seconds after the command, and 4 seconds after the last message.");},4000);
+        setTimeout(function(){API.chatLog("Message1");},1000);
+        setTimeout(function(){API.chatLog("Message2");},3000);
+        setTimeout(function(){API.chatLog("/me Message3");},5000);
       break;
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
