@@ -68,7 +68,7 @@ function utility(data){
    var userTarget11 = data.message.slice(11,155);
    var userTarget12 = data.message.slice(12,255);
    var userTarget13 = data.message.slice(13,255);
-   var currentVersion = "1.2.5.1239";
+   var currentVersion = "1.2.5.1240";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -227,7 +227,7 @@ function utility(data){
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
         },600);
         cooldown();
       break;
