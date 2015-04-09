@@ -4,10 +4,12 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.5.138
+//v1.2.5.1238
+//Added command !subscribe.
+//{v1.2.5.138
 //Command !version changed from User to Resident Dj.
 //Changelog will now only feature minor version changes, and not patches/fixes.
-//{v1.2.5.137
+//v1.2.5.137
 //Updated the commands list to the github commandsbot.md link.
 //Fixed some commands.
 //Added the !theme2, !genre2 and !rules2.
@@ -66,7 +68,7 @@ function utility(data){
    var userTarget11 = data.message.slice(11,155);
    var userTarget12 = data.message.slice(12,255);
    var userTarget13 = data.message.slice(13,255);
-   var currentVersion = 1.2.5.138
+   var currentVersion = "1.2.5.1238";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -97,7 +99,7 @@ function utility(data){
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
       },600);
       cooldown();
-        break;
+      break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
@@ -219,6 +221,10 @@ function utility(data){
             API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
           }
         }
+      break;
+      case'!subscribe':
+        setTimeout(function(){API.sendChat("「UB」Subscriptions help support plug.dj, and they're very cheap! Here's a link to subscribe: http://nazr.in/UKC");},600);
+        cooldown();
       break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
