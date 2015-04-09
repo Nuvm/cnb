@@ -27,7 +27,7 @@ Manager
 |Command | Arguments |  Description |
 |:------:|:---------:|:--------------------------------------:|
 |!disable | | Disables the bot. |
-|!enable derpstaff | | Enables the DerpStaff Mode... Prepare for spam! And war. (see https://github.com/Nuvm/cnb/master/COMMANDSextra.md for commands) |
+|!enable derpstaff | | Enables the DerpStaff Mode... Prepare for spam! And war. |
 
 Bouncer
 --------
@@ -64,7 +64,7 @@ User
 |!randomevent | | A random event occurs! What will happen to you? |
 |!makenightcore | | Sends a link which explains how to nightcore a song. |
 |!fresdj | (@user) | Get the Resident Dj rank for free! |
-
+|!subscribe | | Sends a link to the plug.dj subscribe page. |
 
 
 Event-Related
