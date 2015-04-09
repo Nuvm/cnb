@@ -4,12 +4,15 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.5.137
+//v1.2.5.138
+//Command !version changed from User to Resident Dj.
+//Changelog will now only feature minor version changes, and not patches/fixes.
+//{v1.2.5.137
 //Updated the commands list to the github commandsbot.md link.
 //Fixed some commands.
 //Added the !theme2, !genre2 and !rules2.
 //Added the !version command.
-//{v1.2.4
+//v1.2.4
 //Patched alot of commands.
 //Released the github readme for commands.
 //Added the mehspam command.
@@ -63,7 +66,7 @@ function utility(data){
    var userTarget11 = data.message.slice(11,155);
    var userTarget12 = data.message.slice(12,255);
    var userTarget13 = data.message.slice(13,255);
-   var currentVersion = 1.2.5.137
+   var currentVersion = 1.2.5.138
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -201,8 +204,10 @@ function utility(data){
         cooldown();
       break;
       case'!version':
+       if(userRole0){
         setTimeout(function(){API.sendChat("「UB」Current version: " + currentVersion);},600);
         cooldown();
+       }
       break;
       case'!enable derpstaff':
         if(confirm(data.un + " (" + data.uid + ") wants to enable DerpStaff Mode.") === true){
