@@ -15,7 +15,7 @@ User-specific
 |!donvoo | donvoo | Oh, donvoo, my love.. <3 |
 
 Host/Co-Host
--------
+------------
 
 |Command | Arguments |  Description |
 |:------:|:---------:|:--------------------------------------:|
@@ -45,6 +45,7 @@ Resident DJ
 |!adv | (@user) | Asks to not advertise. |
 |!spam | (@user) | Asks to not spam. |
 |!mehspam | (@user) | Asks to not spam the meh button. |
+|!version | | Displays the current version of the bot. |
 
 User
 ----
@@ -73,3 +74,13 @@ Event-Related
 |:---------:|:---------------:|:------------------:|
 |skip | @user, don't ask for skips! | Rule from the room. |
 |!join | @user, this isn't Tastycat! (This command does not exist). | Command only exists in TastyCat. |
+
+
+Commands to use while the bot is down
+-------------------------------------
+
+|Command | Arguments |  Description |
+|:------:|:---------:|:--------------------------------------:|
+|!theme2 | (@user) | Sends a link to the genre list. |
+|!genre2 | (@user) | Sends a link to the genre list. |
+|!rules2 | (@user) | Sends a link to the rules list. |
