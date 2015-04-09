@@ -4,12 +4,17 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.4
+//v1.2.5.137
+//Updated the commands list to the github commandsbot.md link.
+//Fixed some commands.
+//Added the !theme2, !genre2 and !rules2.
+//Added the !version command.
+//{v1.2.4
 //Patched alot of commands.
 //Released the github readme for commands.
 //Added the mehspam command.
 //Many, many fixes.
-//{v1.2
+//v1.2
 //Utility Mode is now the mode by Default.
 //v1.1
 //Many major fixes, including command fixes.
@@ -22,7 +27,6 @@
 //Official Release of NoobBot.
 //v0.7
 //Created utility mode.}
-
 API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
@@ -59,6 +63,7 @@ function utility(data){
    var userTarget11 = data.message.slice(11,155);
    var userTarget12 = data.message.slice(12,255);
    var userTarget13 = data.message.slice(13,255);
+   var currentVersion = 1.2.5.137
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -71,7 +76,7 @@ function utility(data){
         }
       break;
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName4 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
         },600);
         cooldown();
       break;
@@ -119,8 +124,23 @@ function utility(data){
         },600);
         cooldown();
       break;
+      case'!genre2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        },600);
+        cooldown();
+      break;
+      case'!theme2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        },600);
+        cooldown();
+      break;
+      case'!rules2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
+        },600);
+        cooldown();
+      break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands: !rcs, !helprcs, !call, !adv, !spam, !resdj, !fresdj, !cmd, !credits, !uploaders, !blacklists");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKA");
         },600);
         cooldown();
       break;
@@ -143,36 +163,23 @@ function utility(data){
         setTimeout(function(){API.sendChat("「UB」Here's a link to the Ships in this room: [http://donvoo.me/Ships]");},600);
         cooldown();
       break;
-      case'https://33.media.tumblr.com/0f3e68fc2dd193659ff12b4555333a9f/tumblr_myr7fcu22U1rhqawao1_500.gif':
-        API.sendChat("/me 「UB」☢Lily White uses ClearChat!☢");
-        cooldown();
-      break;
       case'!credits':
         setTimeout(function(){API.sendChat("「UB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
         },600);
         cooldown();
       break;
       case'!test':
-        setTimeout(function () {API.chatLog("This should be the first message.");},1000);
-        setTimeout(function(){API.chatLog("This should be the second message.");},3000);
-        setTimeout(function(){API.chatLog("This should be the third message.");},5000);
+        setTimeout(function(){API.chatLog("1 second after the command.");},1000);
+        setTimeout(function(){API.chatLog("4 seconds after the command, and 3 seconds after the last message.");},3000);
+        setTimeout(function(){API.chatLog("9 seconds after the command, and 5 seconds after the last message.");},5000);
+        setTimeout(function(){API.sendChat("「UB」This should appear 16 seconds after the command was executed, and 6 seconds after the last chatLog message.");},6000);
+        setTimeout(function(){API.chatLog("/me In italics, 20 seconds after the command, and 4 seconds after the last message.");},4000);
       break;
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
         setTimeout(function(){API.sendChat("「UB」" + userName + randomAnswer);},600);
         cooldown();
-      break;
-      case'!enable derpstaff':
-        if(confirm(data.un + "(" + data.uid + ") wants to enable {extra.js}.") === true){
-          if(data.uid === 5010460){
-            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
-            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
-          } else if(userRole2) {
-            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
-            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
-          }
-        }
       break;
       case'!donvoo':
         if(data.uid === 4537120){
@@ -193,10 +200,40 @@ function utility(data){
         setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},600);
         cooldown();
       break;
+      case'!version':
+        setTimeout(function(){API.sendChat("「UB」Current version: " + currentVersion);},600);
+        cooldown();
+      break;
+      case'!enable derpstaff':
+        if(confirm(data.un + " (" + data.uid + ") wants to enable DerpStaff Mode.") === true){
+          if(data.uid === 5010460){
+            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
+            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
+          } else if(userRole2) {
+            $.getScript('https://rawgit.com/Nuvm/cnb/master/extra.js');
+            API.sendChat("「UB」DerpStaff Mode (beta) enabled.");
+          }
+        }
+      break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName4 + " " + userTarget7 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
+        },600);
+        cooldown();
+      break;
+      case'!genre2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        },600);
+        cooldown();
+      break;
+      case'!theme2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
+        },600);
+        cooldown();
+      break;
+      case'!rules2':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
         },600);
         cooldown();
       break;
@@ -236,26 +273,18 @@ function utility(data){
         },600);
         cooldown();
       break;
-      case'!theme2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
-        },600);
-        cooldown();
-      break;
-      case'!rules2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget8 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
-        },600);
-        cooldown();
-      break;
+      
     }
   }
 }
-  function cooldown() {
+
+function cooldown() {
   commandWait = false;
-  setTimeout(function(){commandWait=true;},7000);
+  setTimeout(function(){commandWait=true;},4000);
 }
 function cooldownShort() {
   commandWait = false;
-  setTimeout(function(){commandWait=true;},4000);
+  setTimeout(function(){commandWait=true;},2000);
 }
 function cooldown() {
   commandWait = false;
@@ -266,7 +295,8 @@ function toAtOrNotToAt(){
   if (message.indexOf !== -1){
   }
 }
-API.chatLog("「Utility Bot 1.2.4」is now on.", true);
-var startMsgUtility = "「Utility Bot 1.2.4」loaded.";
+
+API.chatLog("「Utility Bot」is now on.", true);
+var startMsgUtility = "「Utility Bot」loaded.";
 API.sendChat(startMsgUtility);
 //data.message.slice(0,data.message.indexOf(" "))
