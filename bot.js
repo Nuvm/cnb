@@ -4,12 +4,10 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.6
-//Added !ban and !mute commands.
-//{v1.2.5.138
+//v1.2.5.138
 //Command !version changed from User to Resident Dj.
 //Changelog will now only feature minor version changes, and not patches/fixes.
-//v1.2.5.137
+//{v1.2.5.137
 //Updated the commands list to the github commandsbot.md link.
 //Fixed some commands.
 //Added the !theme2, !genre2 and !rules2.
@@ -67,7 +65,7 @@ function utility(data){
   var userTarget11 = data.message.slice(11,155);
   var userTarget12 = data.message.slice(12,255);
   var userTarget13 = data.message.slice(13,255);
-  var currentVersion = "1.2.6";
+  var currentVersion = "1.2.5.1240";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -281,21 +279,21 @@ function utility(data){
       break;
       case'!ban':
         if(userRole1){ //*** TO FIX BACK WITH: userRole1
-          if(data.message.slice(5) === '@'){ //needs to be fixed
-            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
-          } else {
+          if(/\d+/.test(data.message.slice(5,11))){ //needs to be fixed
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned for an hour the user with the UID: " + userTarget5);},600);
             setTimeout(function(){API.moderateBanUser(userTarget5,1,API.BAN.HOUR);},1100);
+          } else {
+            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
           }
         }
       break;
       case'!mute':
         if(userRole1){ //*** TO FIX BACK WITH: userRole1
-          if(data.message.slice(6) === '@'){ //needs to be fixed
-            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
-          } else {
+          if(/\d+/.test(data.message.slice(6,12))){ //needs to be fixed
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted for 45 minutes the user with the UID: " + userTarget6);},600);
             setTimeout(function(){API.moderateMuteUser(userTarget6,1,API.MUTE.LONG);},1100);
+          } else {
+            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
           }
         }
       break;
