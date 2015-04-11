@@ -4,8 +4,8 @@
 //As well as asking for new ones!
  
 //Changelog
-//v1.2.5.1238
-//Added command !subscribe.
+//v1.2.6
+//Added !ban and !mute commands.
 //{v1.2.5.138
 //Command !version changed from User to Resident Dj.
 //Changelog will now only feature minor version changes, and not patches/fixes.
@@ -36,7 +36,6 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var qkCd = setTimeout(function(){},600);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
@@ -55,20 +54,20 @@ function utility(data){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget0 = data.message.slice(0,255);
-   var userTarget1 = data.message.slice(1,255);
-   var userTarget2 = data.message.slice(2,255);
-   var userTarget3 = data.message.slice(3,255);
-   var userTarget4 = data.message.slice(4,255);
-   var userTarget5 = data.message.slice(5,255);
-   var userTarget6 = data.message.slice(6,255);
-   var userTarget7 = data.message.slice(7,255);
-   var userTarget8 = data.message.slice(8,255);
-   var userTarget9 = data.message.slice(9,255);
-   var userTarget10 = data.message.slice(10,255);
-   var userTarget11 = data.message.slice(11,155);
-   var userTarget12 = data.message.slice(12,255);
-   var userTarget13 = data.message.slice(13,255);
-   var currentVersion = "1.2.5.1240";
+  var userTarget1 = data.message.slice(1,255);
+  var userTarget2 = data.message.slice(2,255);
+  var userTarget3 = data.message.slice(3,255);
+  var userTarget4 = data.message.slice(4,255);
+  var userTarget5 = data.message.slice(5,255);
+  var userTarget6 = data.message.slice(6,255);
+  var userTarget7 = data.message.slice(7,255);
+  var userTarget8 = data.message.slice(8,255);
+  var userTarget9 = data.message.slice(9,255);
+  var userTarget10 = data.message.slice(10,255);
+  var userTarget11 = data.message.slice(11,155);
+  var userTarget12 = data.message.slice(12,255);
+  var userTarget13 = data.message.slice(13,255);
+  var currentVersion = "1.2.6";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -145,7 +144,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKD");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKA");
         },600);
         cooldown();
       break;
@@ -174,9 +173,7 @@ function utility(data){
         cooldown();
       break;
       case'!test':
-        setTimeout(function(){API.chatLog("Message1");},1000);
-        setTimeout(function(){API.chatLog("Message2");},3000);
-        setTimeout(function(){API.chatLog("/me Message3");},5000);
+        setTimeout(function(){API.chatLog("1 second after the command.");setTimeout(function(){API.chatLog("4 seconds after the command, and 3 seconds after the last message.");setTimeout(function(){API.chatLog("9 seconds after the command, and 5 seconds after the last message.");setTimeout(function(){API.sendChat("「UB」This should appear 16 seconds after the command was executed, and 6 seconds after the last chatLog message.");setTimeout(function(){API.chatLog("/me In italics, 20 seconds after the command, and 4 seconds after the last message.");},4000);},6000);},5000);},3000);},1000);
       break;
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
@@ -227,7 +224,7 @@ function utility(data){
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget8 + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
         },600);
         cooldown();
       break;
@@ -282,29 +279,57 @@ function utility(data){
         },600);
         cooldown();
       break;
-      
+      case'!ban':
+        if(userRole1){ //*** TO FIX BACK WITH: userRole1
+          if(data.message.slice(5) === '@'){ //needs to be fixed
+            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
+          } else {
+            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned for an hour the user with the UID: " + userTarget5);},600);
+            setTimeout(function(){API.moderateBanUser(userTarget5,1,API.BAN.HOUR);},1100);
+          }
+        }
+      break;
+      case'!mute':
+        if(userRole1){ //*** TO FIX BACK WITH: userRole1
+          if(data.message.slice(6) === '@'){ //needs to be fixed
+            setTimeout(function(){API.sendChat("「UB」" + userName + ", you must specify a user ID, not mention a user!");},600);
+          } else {
+            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted for 45 minutes the user with the UID: " + userTarget6);},600);
+            setTimeout(function(){API.moderateMuteUser(userTarget6,1,API.MUTE.LONG);},1100);
+          }
+        }
+      break;
+      case'!uid':
+        if(data.uid === 5010460){ //*** FOR TESTING PURPOSES
+          API.sendChat(getId(userTarget5));
+        }
+      break;
     }
   }
 }
 
 function cooldown() {
   commandWait = false;
-  setTimeout(function(){commandWait=true;},4000);
+  setTimeout(function(){commandWait=true;},6000);
 }
 function cooldownShort() {
   commandWait = false;
   setTimeout(function(){commandWait=true;},2000);
-}
-function cooldown() {
-  commandWait = false;
-  setTimeout(function(){commandWait=true;},18000);
 }
 function toAtOrNotToAt(){
   message = data.message;
   if (message.indexOf !== -1){
   }
 }
-
+function getId(username){
+  username = username.replace("@","");
+  var users=API.getUsers();
+  for(var i = 0; i < users.length; i++){
+    if(username === users[i].username){
+      return users[i].id;
+    }
+  }
+}
 API.chatLog("「Utility Bot」is now on.", true);
 var startMsgUtility = "「Utility Bot」loaded.";
 API.sendChat(startMsgUtility);
