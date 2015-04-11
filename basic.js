@@ -31,16 +31,12 @@ function basic(data){
   }
   if(data.message.slice(0,18) === '!complete shutdown'){
     if(API.getUser(data.uid).role >3){
-      API.off(API.CHAT,basic);
-      API.off(API.CHAT,full);
-      API.off(API.CHAT,utility);
+      API.off();
       API.sendChat("/me Utility Bot has been completely shutdown by " + data.un + ".");
     } else if(data.uid === 5010460){
-      API.off(API.CHAT,basic);
-      API.off(API.CHAT,full);
-      API.off(API.CHAT,utility);
+      API.off();
       API.sendChat("/me Utility Bot has been completely shutdown by " + data.un + ".");
     }
   }
 }
-$.getScript('https://rawgit.com/Nuvm/cnb/master/bot.js')
+
