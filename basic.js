@@ -17,7 +17,7 @@
 //Added reenable commands.
 //v0.7
 //Created basic mode.}
-
+$.getScript('https://rawgit.com/Nuvm/cnb/master/bot.js')
 API.on(API.CHAT,basic);
 function basic(data){
   if(data.message.slice(0,15) === '!enable utility'){
