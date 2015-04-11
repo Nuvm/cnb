@@ -2,88 +2,11 @@
 //Licensed under the Open GNU License v3.
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
- 
-//Changelog
-//v1.2.3
-//Fixed commands' displays.
-//Fixed the disable command.
-//{v1.2
-//NoobBot is now UtilityBot.
-//Utility.js is now enabled by default.
-//v1.1
-//Many major fixes, including command fixes.
-//Commands !spam, !adv and !magic are now functionnal.
-//v1.0.21
-//Quick fixes.
-//Added setTiemout at the beginning of most commands.
-//v1.0
-//Changed name to NoobBot.
-//Bot now works by default under basic.js.
-//v0.62.13
-//Added !fruit and !randomevent commands.
-//Changed version system (again).
-//Tweaked var qkCd to 200ms.
-//v0.6.0.4
-//Fixed swap and skip to trigger on Bouncer+.
-//v0.6.0.2
-//Tweaked var qkCd from 100ms to 400ms.
-//v0.6.0
-//Added var qkCd, which delays the answer to a command to let the main bot delete the command before sending the message.
-//v0.5.23
-//Added !nuvm image command.
-//v0.5.22.1
-//Tweaked !natvoo command.
-//Rename faulty !commands to !cmd.
-//v0.5.22
-//Added Skip detection.
-//Added !blacklists command.
-//Renamed !reload to !update.
-//v0.5.20.1
-//Fixed again the !stab command.
-//Added !reload command to tell what is the next update about.
-//v0.5.19.1
-//Changed version system.
-//Fixed !stab command.
-//Added !natvoo command.
-//v0.5.7.1
-//Added the Flandre Scarlet clearchat alert.
-//v0.5.7
-//Added commands !pizza, !stab, !hug, !uploaders, !credits, !flirt, !watermelon.
-//Fixed some issues.
-//v0.5.1
-//Even more debugging by donvoo! Fixed issues with targetable commands not working.
-//Added the !donvoo command.
-//v0.5
-//Enormous debugging, big thanks to donvoo.
-//Fixed variables.
-//Fixed doublefunction and doubleswitch problems.
-//v0.4.2.1
-//Added links to !resdj and !fresdj.
-//Changed command !fresdj 's userRole to Bouncer+.
-//Added command !credits to list of cmds
-//Added !spam command.
-//v0.4.1.1
-//Disabled command !revive.
-//v0.4.1
-//Tweaked the code to make the command !revive functionnal again.
-//v0.4
-//Changed the else if system to a switch() system.
-//Disabled command !enable and !disable.
-//Changed default cooldown from 10 to 18 seconds.
-//Changed the cooldown of the !ping command for grey users from 30 to 45 seconds.
-//v0.3.6.1
-//Added variables corresponding to below a userRole.
-//Added tweak to !ping; Grey users now have a 30-second cooldown on the command.
-//v0.3.5.0
-//Added command !credits.
-//v0.3.4.0
-//Added changelog.
-//Added command !resdj and !fresdj.}
+
  
 API.chatLog("「UB」{extra.js} has been loaded.", true);
 API.on(API.CHAT,extra);
 commandWait = true;
-
 function extra(data){
   this.data = data;
   var qkCd = setTimeout(function(){},600);
@@ -151,9 +74,9 @@ function extra(data){
         }
       break;
       case'!fruit':
-        var fruits = ["an :apple:apple:apple:!","a :watermelon:watermelon:watermelon:!","a :banana:banana:banana:!","a :pineapple:pineapple:pineapple:!","a :strawberry:strawberry:strawberry:!","a :peach:peach:peach:!"];
+        var fruits = ["an :apple: apple :apple:","a :watermelon: watermelon :watermelon:","a :banana: banana :banana:","a :pineapple: pineapple :pineapple:","a :strawberry: strawberry :strawberry:","a :peach: peach :peach:"];
         var fruitSelection = fruits[Math.floor(Math.random()*fruits.length)];
-        setTimeout(function(){API.sendChat("「UB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection);
+        setTimeout(function(){API.sendChat("「UB」" + userName + " plunged his/her hand into the fruit basket.... and found " + fruitSelection + " !");
           },600);
           cooldown();
       break;
@@ -256,7 +179,7 @@ function extra(data){
 }
   function cooldown() {
   commandWait = false;
-  setTimeout(function(){commandWait=true;},7000);
+  setTimeout(function(){commandWait=true;},12000);
 }
 function cooldownShort() {
   commandWait = false;
