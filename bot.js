@@ -65,7 +65,7 @@ function utility(data){
   var userTarget11 = data.message.slice(11,155);
   var userTarget12 = data.message.slice(12,255);
   var userTarget13 = data.message.slice(13,255);
-  var currentVersion = "1.2.5.1240";
+  var currentVersion = "1.2.6.114";
   if (commandWait === true){
     if(data.message.slice(0,4) === 'skip'){
       API.sendChat(userName + ", don't ask for skips.");
@@ -174,7 +174,7 @@ function utility(data){
         setTimeout(function(){API.chatLog("1 second after the command.");setTimeout(function(){API.chatLog("4 seconds after the command, and 3 seconds after the last message.");setTimeout(function(){API.chatLog("9 seconds after the command, and 5 seconds after the last message.");setTimeout(function(){API.sendChat("「UB」This should appear 16 seconds after the command was executed, and 6 seconds after the last chatLog message.");setTimeout(function(){API.chatLog("/me In italics, 20 seconds after the command, and 4 seconds after the last message.");},4000);},6000);},5000);},3000);},1000);
       break;
       case'!randomevent':
-        var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."];
+        var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."," wondered why the truck was getting bigger and bigger... while standing in the middle of the road."," saw donvoo and got an intense anime-style nosebleed."," saw Flandre and - 'Hey, were you the onii-sama who sent this onii-sama after me?'"];
         var randomAnswer = randomEvent[Math.floor(Math.random()*randomEvent.length)];
         setTimeout(function(){API.sendChat("「UB」" + userName + randomAnswer);},600);
         cooldown();
