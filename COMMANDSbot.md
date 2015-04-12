@@ -34,8 +34,8 @@ Bouncer
 
 |Command | Arguments |  Description |
 |:------:|:---------:|:--------------------------------------:|
-|!mute | user ID | Mutes the specified ID for 45 minutes. |
-|!ban | user ID | Bans the specified ID for 1 hour. |
+|!mute | user ID or @user | Mutes the specified ID for 45 minutes. |
+|!ban | user ID or @user | Bans the specified ID for 1 hour. |
 
 Resident DJ
 -----------
