@@ -34,7 +34,7 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "1.2.7";
+  var currentVersion = "1.3";
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
@@ -67,9 +67,12 @@ function utility(data){
   var userTarget12 = data.message.slice(12,255);
   var userTarget13 = data.message.slice(13,255);
   if (commandWait === true){
-    if(/^(?!.*history).*skip.*$/i.test(data.message)){
-      API.sendChat(userName + ", don't ask for skips.");
-    }
+    /*if(/^(?!.*skipped).*(?!.*skips).*(?!.*history).*(?!.*no).*(?!.*dont).*(?!.*don't).*(?!.*not).*(?!.*\?).*(?!.*why).*skip.*$/i.test(data.message)){
+      **if(API.getUser(data.uid).role === 0){
+        **API.sendChat("「UB」" + userName + ", don't ask for skips if they're not in history.");
+        **API.moderateDeleteChat(data.cid);
+      **}
+    }*/
     switch(data.message){
       case'!ping':
         if(userRole0){
@@ -219,6 +222,14 @@ function utility(data){
         setTimeout(function(){API.sendChat("「UB」Subscriptions help support plug.dj, and they're very cheap! Here's a link to subscribe: http://nazr.in/UKC");},400);
         cooldown();
       break;
+      case'!noobscript':
+        setTimeout(function(){API.sendChat("「UB」Here is the link to NoobScript: http://nazr.in/URf");},400);
+        cooldown();
+      break;
+      case'!pokemon':
+        setTimeout(function(){API.sendChat("「UB」Here is the link to our Pokemon Server: http://nazr.in/UYM");},400);
+        cooldown();
+      break;
     }
     switch(data.message.slice(0,data.message.indexOf(" "))){
       case'!fresdj':
@@ -277,12 +288,16 @@ function utility(data){
         },400);
         cooldown();
       break;
+      case'!pokemon':
+        setTimeout(function(){API.sendChat("「UB」" + userTarget9 + " Here is the link to our Pokemon Server: http://nazr.in/UYM");},400);
+        cooldown();
+      break;
       case'!ban':
-        if(userRole1){ //*** TO FIX BACK WITH: userRole1
-          if(/\d+/.test(data.message.slice(5,11))){ //needs to be fixed
+        if(userRole1){
+          if(/^[0-9]+$/.test(data.message.slice(5,11))){
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned for an hour the user with the UID: " + userTarget5);},400);
             setTimeout(function(){API.moderateBanUser(userTarget5,1,API.BAN.HOUR);},900);
-          } else if(data.message.split('@') !== undefined){
+          } else if(data.message.split('@')[1] !== undefined){
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned " + userTarget5 + " for an hour.");},400);
             setTimeout(function(){API.moderateBanUser(getId((data.message.split('@')[1]).trim()),1,API.BAN.HOUR);},900);
           } else {
@@ -291,15 +306,15 @@ function utility(data){
         }
       break;
       case'!mute':
-        if(userRole1){ //*** TO FIX BACK WITH: userRole1
-          if(/\d+/.test(data.message.slice(6,12))){ //needs to be fixed
+        if(userRole1){
+          if(/^[0-9]+$/.test(data.message.slice(6,12))){
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted for 45 minutes the user with the UID: " + userTarget6);},400);
-            setTimeout(function(){API.moderateMuteUser(userTarget6,1,API.MUTE.LONG);},900);
-          } else if(data.message.split('@') !== undefined){
+            setTimeout(function(){API.moderateMuteUser(userTarget6,3,API.MUTE.LONG);},900);
+          } else if(data.message.split('@')[1] !== undefined){
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted " + userTarget5 + " for 45 minutes.");},400);
-            setTimeout(function(){API.moderateMuteUser(getId((data.message.split('@')[1]).trim()),1,API.MUTE.LONG);},900);
+            setTimeout(function(){API.moderateMuteUser(getId((data.message.split('@')[1]).trim()),3,API.MUTE.LONG);},900);
           } else {
-            setTimeout(function(){API.sendChat("「UB」" + userName + "Couldn't execute command! Make sure you have specified either a user ID or a username.");},400);
+            setTimeout(function(){API.sendChat("「UB」" + userName + " Couldn't execute command! Make sure you have specified either a user ID or a username.");},400);
           }
         }
       break;
@@ -311,7 +326,6 @@ function utility(data){
     }
   }
 }
-
 function cooldown() {
   commandWait = false;
   setTimeout(function(){commandWait=true;},6000);
