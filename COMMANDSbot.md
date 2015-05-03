@@ -7,6 +7,16 @@ arguments between ( ) are optional
 
 Cooldowns are set to 7 seconds.
 
+New commands
+---------------
+
+|Command | Arguments | Required Rank |  Description |
+|:------:|:---------:|:-------------:|:-----------------------------:|
+|!givepos | | None | Gives away the user's position in the waitlist. |
+|!take | | None | Claims the spot that is being given away. |
+|!checkposlist | | Resident Dj | Checks who is currently giving away their spot. |
+|!uid | @user | Resident Dj | Checks the specified user's ID. |
+
 User-specific 
 -------------
 
@@ -47,6 +57,8 @@ Resident DJ
 |!spam | (@user) | Asks to not spam. |
 |!mehspam | (@user) | Asks to not spam the meh button. |
 |!version | | Displays the current version of the bot. |
+|!checkposlist | | Checks who is currently giving away their spot. |
+|!uid | @user | Checks the specified user's ID. |
 
 User
 ----
@@ -66,6 +78,10 @@ User
 |!makenightcore | | Sends a link which explains how to nightcore a song. |
 |!fresdj | (@user) | Get the Resident Dj rank for free! |
 |!subscribe | | Sends a link to the plug.dj subscribe page. |
+|!pokemon | (@user) | Sends a link to our Pokemon server. |
+|!noobscript | | Sends a link to Noobscript. |
+|!givepos | | Gives away the user's position in the waitlist. |
+|!take | | Claims the spot that is being given away. |
 
 
 Event-Related
