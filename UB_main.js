@@ -7,11 +7,11 @@ API.on(API.CHAT,basic);
 function basic(data){
   this.data = data;
   if(data.message.slice(0,10) === '!enable ub'){
-    if(API.getUser().role > 0){
-      $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');
-    } else if(data.uid === 5010460){
+    if(data.uid === 5010460){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_NuvBuild.js');
-    }
+    } else if(API.getUser().role > 0){
+      $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');
+    } 
   }
   if(data.message.slice(0,11) === '!ubshutdown'){
     if(API.getUser(data.uid).role >3){
