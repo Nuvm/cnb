@@ -9,7 +9,7 @@ function basic(data){
   if(data.message.slice(0,10) === '!enable ub'){
     if(data.uid === 5010460){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_NuvBuild.js');
-    } else if(API.getUser().role > 0 && data.uid !== 5010460){
+    } else if(API.getUser().role === 1 && data.uid !== 5010460){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');
     } 
   }
