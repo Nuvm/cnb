@@ -61,7 +61,7 @@ User
 |!rcs | (@user) | Sends a link to RCS. |
 |!helprcs | (@user) | Sends help about RCS. |
 |!blacklist | | Sends a link to the Umcookies blacklist (useful when the bot is down). |
-|!call | | Sends a notification to Nuvm (only use when a bouncer+ command is required, e.g: a skip or a swap). |
+|!call | | Sends a notification to the user running the bot, asking for his/her presence. |
 |!resdj | (@user) | Sends information on how to apply for the Resident Dj rank. |
 |!cmd | | Sends a link to this page. |
 |!uploaders | | Sends a link to the YouTube channels of the staff. |
