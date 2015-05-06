@@ -7,7 +7,7 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "1.4_NuvBuild";
+  var currentVersion = "NuvBuild_1.4.1";
   var wlPos = API.getWaitListPosition(data.uid);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
@@ -229,9 +229,9 @@ function utility(data){
       case'!take':
         if(userPosGive === true){
           if(positionGivingUsers.indexOf(data.un) === -1){
-            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
-            setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
-            setTimeout(function(){positionGivingUsers.shift();},900);
+            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[positionGivingUsers.length] + "'s spot.");},400);
+            setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[positionGivingUsers.length]);},800);
+            setTimeout(function(){positionGivingUsers.splice(positionGivingUsers.length,1);},900);
             setTimeout(function(){userPosGive = false;},950);
           } else if(positionGivingUsers.indexOf(data.un) !== -1){
             setTimeout(function(){API.sendChat("「UB」" + userName2 + " You can't take your own spot! Write !removespot instead.");},400);
@@ -248,9 +248,15 @@ function utility(data){
       case'!checkposlist':
         if(positionGivingUsers[0] !== undefined){
           console.log(positionGivingUsers[0]);
-          API.sendChat("「UB」" + userName2 + " Current people giving away their position: " + positionGivingUsers);
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Current people giving away their position: " + positionGivingUsers);},400);
         } else if(positionGivingUsers[0] === undefined){
-          API.sendChat("「UB」" + userName2 + " No one is currently giving away their position.");
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " No one is currently giving away their position.");},400);
+        }
+      break;
+      case'!clearposlist':
+        if((data.uid).role >1){
+          positionGivingUsers.splice(0,20);
+          setTImeout(function(){API.sendChat("「UB」" + userName2 + " The list of people giving out their position has been cleared.");},400);
         }
       break;
     }
@@ -392,11 +398,18 @@ function test1(data){
     if(positionGivingUsers.indexOf(data.un) === -1){
       if(API.getWaitListPosition(data.uid) !== -1){
         userPosGive = true;
-        positionGivingUsers.push(data.un);
+        positionGivingUsers.unshift(data.un);
       }
     }
   }
 }
+function posEmptyCheck(){
+  if(positionGivingUsers[0] === undefined){
+    userPosGive = false;
+  }
+}
+setInterval(function(){posEmptyCheck();},4000);
+
 function extra(data){
   this.data = data;
   var qkCd = setTimeout(function(){},600);
@@ -567,12 +580,7 @@ function extra(data){
     }
   }
 }
-function posEmptyCheck(){
-  if(positionGivingUsers[0] === undefined){
-    userPosGive = false;
-  }
-}
-setInterval(function(){posEmptyCheck();},4000);
+
 
 API.chatLog("「Utility Bot」is now on.", true);
 var startMsgUtility = "「Utility Bot」loaded.";
