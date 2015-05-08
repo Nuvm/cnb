@@ -7,8 +7,8 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "NuvBuild_1.4.1";
-  var wlPos = API.getWaitListPosition(data.uid);
+  var currentVersion = "NuvBuild 1.4.2";
+  var wlPos = API.getWaitListPosition(data.uid)+1;
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
@@ -229,10 +229,9 @@ function utility(data){
       case'!take':
         if(userPosGive === true){
           if(positionGivingUsers.indexOf(data.un) === -1){
-            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[positionGivingUsers.length] + "'s spot.");},400);
-            setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[positionGivingUsers.length]);},800);
-            setTimeout(function(){positionGivingUsers.splice(positionGivingUsers.length,1);},900);
-            setTimeout(function(){userPosGive = false;},950);
+            setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
+            setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
+            setTimeout(function(){positionGivingUsers.shift();},900);
           } else if(positionGivingUsers.indexOf(data.un) !== -1){
             setTimeout(function(){API.sendChat("「UB」" + userName2 + " You can't take your own spot! Write !removespot instead.");},400);
           }
@@ -398,7 +397,7 @@ function test1(data){
     if(positionGivingUsers.indexOf(data.un) === -1){
       if(API.getWaitListPosition(data.uid) !== -1){
         userPosGive = true;
-        positionGivingUsers.unshift(data.un);
+        positionGivingUsers.push(data.un);
       }
     }
   }
@@ -580,7 +579,6 @@ function extra(data){
     }
   }
 }
-
 
 API.chatLog("「Utility Bot」is now on.", true);
 var startMsgUtility = "「Utility Bot」loaded.";
