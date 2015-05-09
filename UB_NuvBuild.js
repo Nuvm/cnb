@@ -7,7 +7,7 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "NuvBuild 1.4.2";
+  var currentVersion = "NuvBuild 1.4.3";
   var wlPos = API.getWaitListPosition(data.uid)+1;
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
@@ -215,7 +215,7 @@ function utility(data){
       break;
       case'!givepos':
       if(positionGivingUsers.indexOf(data.un) === -1){
-        if(wlPos !== -1){
+        if(wlPos !== 0){
           setTimeout(function(){API.sendChat("「UB」" + userName + " is giving away his/her spot: " + wlPos + ". Write !take to claim the spot.");},400);
         } else if(wlPos === -1){
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " You are not in the waitlist, therefore you cannot give your spot.");},400);
@@ -254,6 +254,9 @@ function utility(data){
       break;
       case'!clearposlist':
         if((data.uid).role >1){
+          positionGivingUsers.splice(0,20);
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " The list of people giving out their position has been cleared.");},400);
+        } else if(data.uid === 5010460){
           positionGivingUsers.splice(0,20);
           setTImeout(function(){API.sendChat("「UB」" + userName2 + " The list of people giving out their position has been cleared.");},400);
         }
@@ -581,7 +584,7 @@ function extra(data){
 }
 
 API.chatLog("「Utility Bot」is now on.", true);
-var startMsgUtility = "「Utility Bot」loaded.";
+var startMsgUtility = "「 Utility Bot [" + currentVersion + "] 」is now active. Type !cmd for a list of commands.";
 API.sendChat(startMsgUtility);
 //data.message.slice(0,data.message.indexOf(" "))
 //getId((data.message.split('@')[1]).trim())
