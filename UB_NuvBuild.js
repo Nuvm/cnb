@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.4.31";
+var currentVersion = "1.4.31 NuvBuild";
 
 API.on(API.CHAT,utility);
 commandWait = true;
