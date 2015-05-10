@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "1.4.31 NuvBuild";
+var currentVersion = "1.4.32 NuvBuild";
 
 API.on(API.CHAT,utility);
 commandWait = true;
@@ -129,7 +129,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/UKD");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");
         },400);
         cooldown();
       break;
