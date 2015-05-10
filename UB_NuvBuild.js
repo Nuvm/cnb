@@ -3,11 +3,12 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
+var currentVersion = "NuvBuild 1.4.31";
+
 API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "NuvBuild 1.4.3";
   var wlPos = API.getWaitListPosition(data.uid)+1;
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
