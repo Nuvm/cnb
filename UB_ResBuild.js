@@ -8,7 +8,7 @@ API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var currentVersion = "1.0_ResBuild";
+  var currentVersion = "ResBuild 1.4.33";
   var wlPos = API.getWaitListPosition(data.uid);
   var userRunningBot = API.getUser().uid;
   var userRole0 = API.getUser(data.uid).role >0;
@@ -122,8 +122,13 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VA1");
-        },400);
+        if(currentVersion.splice(0,8) === "NuvBuild"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");},400);
+        } else if(currentVersion.splice(0,8) === "ResBuild"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VA1");},400);
+        } else if(currentVersion.splice(0,6) === "Stable"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VMi");},400);
+        }
         cooldown();
       break;
       case'!disable':
