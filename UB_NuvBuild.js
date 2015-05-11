@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.4.32";
+var currentVersion = "NuvBuild 1.4.33";
 
 API.on(API.CHAT,utility);
 commandWait = true;
@@ -58,91 +58,81 @@ function utility(data){
         }
       break;
       case'!fresdj':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");},400);
         cooldown();
       break;
       case'!rcs':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " RCS is a plugin with AutoWoot, AutoJoin, AFK message, custom emotes, and much more! Go check it out: [https://rcs.radiant.dj].");},400);
         cooldown();
       break;
       case'!helprcs':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " The menu for RCS is located at the top right. For more info, visit: [https://rcs.radiant.dj] .");},400);
         cooldown();
       break;
       case'!blacklist':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");
-      },400);
-      cooldown();
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");},400);
+        cooldown();
       break;
       case'!call':
         API.chatLog("#CALLED# " + userName3 + " called you!");
       break;
       case'!adv':
         if(userRole0){
-          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-          },400);
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");},400);
         }
         cooldown();
       break;
       case'!advertising':
         if(userRole0){
-          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");
-          },400);
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Advertising is forbidden. It can result in a permaban! Don't post links without permission (Except image links).");},400);
         }
         cooldown();
       break;
       case'!spam':
         if(userRole0){
-          setTimeout(function(){API.sendChat("「UB」Please don't spam!");
-          },400);
+          setTimeout(function(){API.sendChat("「UB」Please don't spam!");},400);
         }
         cooldown();
       break;
       case'!mehspam':
         if(userRole0){
-          setTimeout(function(){API.sendChat("「UB」Please don't spam the meh button.");
-          },400);
+          setTimeout(function(){API.sendChat("「UB」Please don't spam the meh button.");},400);
         }
         cooldown();
       break;
       case'!resdj':
-        setTimeout(function(){API.sendChat("「UB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");},400);
         cooldown();
       break;
       case'!genre2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
         cooldown();
       break;
       case'!theme2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
         cooldown();
       break;
       case'!rules2':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");
-        },400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Please follow the Nightcore-331 rules! [http://www.nightcore-331.net/viewtopic.php?f=6&t=624]");},400);
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");
-        },400);
+        if(currentVersion.splice(0,8) === "NuvBuild"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");},400);
+        } else if(currentVersion.splice(0,8) === "ResBuild"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VA1");},400);
+        } else if(currentVersion.splice(0,6) === "Stable"){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VMi");},400);
+        }
         cooldown();
       break;
       case'!disable':
         if(data.uid === 5010460){
             API.off(API.CHAT,utility);
-            setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");
-          },400);
-            }
-        else if(userRole2 && data.uid !== 3684485){
+            setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");},400);}
+        else if(userRole2){
             API.off(API.CHAT,utility);
-            setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");},400);
-            }
+            setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");},400);}
       break;
       case'!uploaders':
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here's a link to the YouTube channels of our staff: [http://donvoo.me/uploaders]");},400);
