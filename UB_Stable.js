@@ -129,7 +129,7 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VMi");
         },400);
         cooldown();
       break;
