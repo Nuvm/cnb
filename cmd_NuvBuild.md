@@ -15,7 +15,7 @@ New commands
 |!givepos | | None | Gives away the user's position in the waitlist. |
 |!take | | None | Claims the spot that is being given away. |
 |!checkposlist | | Resident Dj | Checks who is currently giving away their spot. |
-|!uid | @user | Resident Dj | Checks the specified user's ID. |
+|!clearposlist | | Manager | Clears the list of current users giving out their position. |
 
 User-specific 
 -------------
@@ -38,6 +38,7 @@ Manager
 |:------:|:---------:|:--------------------------------------:|
 |!disable | | Disables the bot. |
 |!enable derpstaff | | Enables the DerpStaff Mode... Prepare for spam! And war. |
+|!clearposlist | | Clears the list of current users giving out their position. |
 
 Bouncer
 --------
