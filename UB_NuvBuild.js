@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.4.33";
+var currentVersion = "NuvBuild 1.4.34";
 
 API.on(API.CHAT,utility);
 commandWait = true;
@@ -117,11 +117,11 @@ function utility(data){
         cooldown();
       break;
       case'!cmd':
-        if(currentVersion.splice(0,8) === "NuvBuild"){
+        if(currentVersion.slice(0,8) === "NuvBuild"){
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");},400);
-        } else if(currentVersion.splice(0,8) === "ResBuild"){
+        } else if(currentVersion.slice(0,8) === "ResBuild"){
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VA1");},400);
-        } else if(currentVersion.splice(0,6) === "Stable"){
+        } else if(currentVersion.slice(0,6) === "Stable"){
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VMi");},400);
         }
         cooldown();
