@@ -3,8 +3,8 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.4.34";
-
+var currentVersion = "NuvBuild 1.4.36";
+posListAnnouncement();
 API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
@@ -100,10 +100,6 @@ function utility(data){
         }
         cooldown();
       break;
-      case'!resdj':
-        setTimeout(function(){API.sendChat("「UB」Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");},400);
-        cooldown();
-      break;
       case'!genre2':
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
         cooldown();
@@ -146,9 +142,6 @@ function utility(data){
         setTimeout(function(){API.sendChat("「UB」was coded by Nuvm. Special thanks to UMCOOKIES, donvoo and Zaro38 who helped with the general coding.");
         },400);
         cooldown();
-      break;
-      case'!test':
-        setTimeout(function(){API.chatLog("1 second after the command.");setTimeout(function(){API.chatLog("4 seconds after the command, and 3 seconds after the last message.");setTimeout(function(){API.chatLog("9 seconds after the command, and 5 seconds after the last message.");setTimeout(function(){API.sendChat("「UB」This should appear 16 seconds after the command was executed, and 6 seconds after the last chatLog message.");setTimeout(function(){API.chatLog("/me In italics, 20 seconds after the command, and 4 seconds after the last message.");},4000);},6000);},5000);},3000);},1000);
       break;
       case'!randomevent':
         var randomEvent = [" looked up.. and nothing happened."," tried to get a life, but failed miserably."," tried to get a life, succeeded, and ended up as a hobo."," found expensive jewelry lying on the floor. And got shot."," tried to pick up a girl/guy. Ended up at McDonald's."," searched Google Images all day long."," had fun eating poisoned candy."," took a flight and died in a plane crash."," finally realized... he/she is missing a toe."," walked and walked into a dark tunnel... and found Kaboom at the end of the tunnel."," looked around and died."," listened to Nyanpasu on 150% for 10 hours."," saw a watermelon... but it was made of plastic."," encountered a wild loli! Loli fled."," was playing with fire and got burned down to ashes."," picked up a rock... and realised it was a bomb."," picked up a bomb... and forgot it was a bomb."," saw a lion crossing the road. While standing in the middle of it."," saw a unicorn... and got impaled."," died."," wondered why the truck was getting bigger and bigger... while standing in the middle of the road."," saw donvoo and got an intense anime-style nosebleed."," saw Flandre and - 'Hey, were you the onii-sama who sent this onii-sama after me?'"];
@@ -223,6 +216,9 @@ function utility(data){
             setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
             setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
             setTimeout(function(){positionGivingUsers.shift();},900);
+            if(positionGivingUsers[0] === undefined){
+              userPosGive = false;
+            }
           } else if(positionGivingUsers.indexOf(data.un) !== -1){
             setTimeout(function(){API.sendChat("「UB」" + userName2 + " You can't take your own spot! Write !removespot instead.");},400);
           }
@@ -238,7 +234,7 @@ function utility(data){
       case'!checkposlist':
         if(positionGivingUsers[0] !== undefined){
           console.log(positionGivingUsers[0]);
-          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Current people giving away their position: " + positionGivingUsers);},400);
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " Current people giving away their position: " + positionGivingUsers + ". To see their current waitlist position, use the command !spot.");},400);
         } else if(positionGivingUsers[0] === undefined){
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " No one is currently giving away their position.");},400);
         }
@@ -359,6 +355,10 @@ function utility(data){
         }
         cooldown();
       break;
+      case'!spot':
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget6 + "'s current position in the wailist is:" + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
+        cooldown();
+      break;
     }
   }
 }
@@ -396,16 +396,17 @@ function test1(data){
     }
   }
 }
-function posEmptyCheck(){
-  if(positionGivingUsers[0] === undefined){
-    userPosGive = false;
+function posListAnnouncement(){
+  if(userPosGive === true){
+    setTimeout(function timeoutPosList(){API.sendChat("「UB」" + positionGivingUsers + " are giving away their position. Write !take to claim their spot.");},40000);
+    if(positionGivingUsers[0] === undefined){
+      clearTimeout(timeoutPosList());
+      userPosGive = false;
+    }
   }
 }
-setInterval(function(){posEmptyCheck();},4000);
-
 function extra(data){
   this.data = data;
-  var qkCd = setTimeout(function(){},600);
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
   var userRole2 = API.getUser(data.uid).role >2;
@@ -526,37 +527,37 @@ function extra(data){
       break;
       case'!stab':
         if(userRole3){
-          var choose5 = ['「UB」" + userName + " tried to stab " + userTarget + ", and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose5 = [', and succeeded!',', and succeeded!',', and succeeded!',', and succeeded!',', and succeeded!',', and succeeded!',', and succeeded!',', but failed!'];
           var random2 = choose5[Math.floor(Math.random()*choose5.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random2);
           },600);
           cooldownShort();
         } else if(userRole2){
-          var choose2 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose2 = [', and succeeded!',', and succeeded!',', and succeeded!',', but failed!'];
           var random3 = choose2[Math.floor(Math.random()*choose2.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random3);
           },600);
           cooldown();
         } else if(userRole1) {
-          var choose3 = [', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose3 = [', and succeeded!',', and succeeded!',', but failed!'];
           var random4 = choose3[Math.floor(Math.random()*choose3.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random4);
           },600);
           cooldown();
         } else if(userRole0) {
-          var choose4 = [', and succeeded!"',', but failed!"'];
+          var choose4 = [', and succeeded!',', but failed!'];
           var random5 = choose4[Math.floor(Math.random()*choose4.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random5);
           },600);
           cooldown();
         } else if(userRoleIs0){
-          var choose6 = [', and succeeded!"',', but failed!"',', but failed!"'];
+          var choose6 = [', and succeeded!',', but failed!',', but failed!'];
           var random6 = choose6[Math.floor(Math.random()*choose6.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random6);
           },600);
           cooldown();
         } else {
-          var choose7 = [', and succeeded!"',', and succeeded!"',', and succeeded!"',', but failed!"'];
+          var choose7 = [', and succeeded!',', and succeeded!',', and succeeded!',', but failed!'];
           var random7 = choose7[Math.floor(Math.random()*choose7.length)];
           setTimeout(function(){API.sendChat("「UB」" + userName + " tried to stab " + userTarget + random7);
           },600);
