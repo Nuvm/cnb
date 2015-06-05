@@ -4,12 +4,12 @@
 //As well as asking for new ones!
 var positionGivingUsers = [];
 var currentVersion = "NuvBuild 1.4.37";
+var userPosGive = 'undefined';
 posListAnnouncement();
 API.on(API.CHAT,utility);
 commandWait = true;
 function utility(data){
   this.data = data;
-  var userPosGive = 'undefined';
   var wlPos = API.getWaitListPosition(data.uid)+1;
   var userRole0 = API.getUser(data.uid).role >0;
   var userRole1 = API.getUser(data.uid).role >1;
