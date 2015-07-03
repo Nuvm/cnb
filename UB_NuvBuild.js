@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.6";
+var currentVersion = "NuvBuild 1.5.7";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -101,7 +101,7 @@ function c1(data,cn){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
-  var userTarget = data.message.split("@")[1];
+  var userTarget = "@" + data.message.split("@")[1];
   var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
   switch(cn){
     case'!ping':
@@ -405,7 +405,7 @@ function c2(data,cn){
     case'!ban':
       if(userRole1){
         if(/^[0-9]+$/.test(data.message.slice(5,11))){
-          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned for an hour the user with the UID: " + userTarget);},400);
+          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned for an hour the user with the UID: " + data.message.slice(5,11));},400);
           setTimeout(function(){API.moderateBanUser(userTarget,1,API.BAN.HOUR);},900);
         } else if(data.message.split('@')[1] !== undefined){
           setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Banned " + userTarget + " for an hour.");},400);
@@ -418,7 +418,7 @@ function c2(data,cn){
     case'!mute':
       if(userRole1){
         if(/^[0-9]+$/.test(data.message.slice(6,12))){
-          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted for 45 minutes the user with the UID: " + userTarget);},400);
+          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted for 45 minutes the user with the UID: " + data.message.slice(6,12));},400);
           setTimeout(function(){API.moderateMuteUser(userTarget,3,API.MUTE.LONG);},900);
         } else if(data.message.split('@')[1] !== undefined){
           setTimeout(function(){API.sendChat("/me 「UB」" + userName + " Muted " + userTarget + " for 45 minutes.");},400);
@@ -449,7 +449,7 @@ function c2(data,cn){
     break;
     case'!spot':
       if(userTarget!==-1){
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + "'s current position in the wailist is:" + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + "'s current position in the wailist is: " + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
       } else {
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " is not in the waitlist.");},400);
       }
