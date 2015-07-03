@@ -30,8 +30,8 @@ function main(data){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = data.message.split("@")[1];
-  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
-  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot','!define'];
+  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo'];
+  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot','!define','!flirt'];
   if (commandWait === true){
     if(/^.*(?!skips|skipped|history|no|don't|dont|not|why).*skip.*$/i.test(data.message)){
       if(API.getUser(data.uid).role === 0){
