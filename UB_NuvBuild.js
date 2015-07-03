@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.4";
+var currentVersion = "NuvBuild 1.5.5";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
