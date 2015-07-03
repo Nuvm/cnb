@@ -1,4 +1,4 @@
-Utility Bot [ResBuild] Commands:
+Utility Bot Commands:
 =========
 
 X specifies a number
@@ -12,13 +12,16 @@ New commands
 
 |Command | Arguments | Required Rank |  Description |
 |:------:|:---------:|:-------------:|:-----------------------------:|
-|!uid | @user | Resident Dj | Checks the specified user's ID. |
+|!define | word(s) | Resident Dj | Sends a link to Urban Dictionnary with the mentionned words. |
+|!flirt | @user | Resident Dj | Flirt with some users! With horrible pickup lines. |
+|!natvoo | | Resident Dj | Promote this fabulous ship. |
 
 User-specific 
 -------------
 
 |Command |  User   |  Description |
-Nothing yet! :(
+|:------:|:-------:|:--------------------------------------:|
+|!donvoo | donvoo | Oh, donvoo, my love.. <3 |
 
 Host/Co-Host
 ------------
@@ -51,6 +54,7 @@ Resident DJ
 |!spam | (@user) | Asks to not spam. |
 |!mehspam | (@user) | Asks to not spam the meh button. |
 |!version | | Displays the current version of the bot. |
+|!checkposlist | | Checks who is currently giving away their spot. |
 |!uid | @user | Checks the specified user's ID. |
 
 User
@@ -61,7 +65,7 @@ User
 |!rcs | (@user) | Sends a link to RCS. |
 |!helprcs | (@user) | Sends help about RCS. |
 |!blacklist | | Sends a link to the Umcookies blacklist (useful when the bot is down). |
-|!call | | Sends a notification to the user running the bot, asking for his/her presence. |
+|!call | | Sends a notification to Nuvm (only use when a bouncer+ command is required, e.g: a skip or a swap). |
 |!resdj | (@user) | Sends information on how to apply for the Resident Dj rank. |
 |!cmd | | Sends a link to this page. |
 |!uploaders | | Sends a link to the YouTube channels of the staff. |
@@ -80,6 +84,7 @@ Event-Related
 
 |Chat Event | Reaction | Reason |
 |:---------:|:---------------:|:------------------:|
+|skip | @user, don't ask for skips! | Rule from the room. |
 |!join | @user, this isn't Tastycat! (This command does not exist). | Command only exists in TastyCat. |
 
 
