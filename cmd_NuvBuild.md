@@ -12,6 +12,7 @@ New commands
 
 |Command | Arguments | Required Rank |  Description |
 |:------:|:---------:|:-------------:|:-----------------------------:|
+|!define | word(s) | Resident Dj | Sends a link to Urban Dictionnary with the mentionned words. |
 |!givepos | | None | Gives away the user's position in the waitlist. |
 |!take | | None | Claims the spot that is being given away. |
 |!checkposlist | | Resident Dj | Checks who is currently giving away their spot. |
