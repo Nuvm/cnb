@@ -304,7 +304,7 @@ function c1(data,cn){
     break;
     case'!define':
       if(data.message.indexOf(" ")!==-1 && userRole0){
-        var toDef = data.message.indexOf(" ").replace(" ","+");
+        var toDef = data.message.indexOf(" ")[1].replace(" ","+");
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
       }
     break;
