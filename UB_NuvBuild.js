@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.7";
+var currentVersion = "NuvBuild 1.5.8";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -304,7 +304,7 @@ function c1(data,cn){
     break;
     case'!define':
       if(data.message.indexOf(" ")!==-1 && userRole0){
-        var toDef = ((data.message.indexOf(" ")).trim()).replace(" ","+");
+        var toDef = data.message.indexOf(" ").replace(" ","+");
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
       }
     break;
