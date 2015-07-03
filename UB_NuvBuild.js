@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.2";
+var currentVersion = "NuvBuild 1.5.3";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -31,7 +31,7 @@ function main(data){
   var userName4 = "[" + data.un + "]";
   var userTarget = data.message.split("@")[1];
   var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
-  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot'];
+  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot','!define'];
   if (commandWait === true){
     if(/^.*(?!skips|skipped|history|no|don't|dont|not|why).*skip.*$/i.test(data.message)){
       if(API.getUser(data.uid).role === 0){
@@ -111,7 +111,7 @@ function c1(data,cn){
       }
     break;
     case'!fresdj':
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + " Click here to get Res Dj instantly! [http://nazr.in/UCu]");},400);
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " Click here to get Res Dj instantly! [https://goo.gl/jbHK8F]");},400);
       cooldown();
     break;
     case'!rcs':
@@ -123,7 +123,7 @@ function c1(data,cn){
       cooldown();
     break;
     case'!blacklist':
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: http://www.umcookies.com/blacklist.php");},400);
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " The SEASONAL, JUNK and THEME blacklists can be found here: [http://www.umcookies.com/blacklist.php]");},400);
       cooldown();
     break;
     case'!call':
@@ -157,8 +157,8 @@ function c1(data,cn){
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
       cooldown();
     break;
-      case'!theme2':
-    setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
+    case'!theme2':
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");},400);
       cooldown();
     break;
     case'!rules2':
@@ -167,21 +167,19 @@ function c1(data,cn){
     break;
     case'!cmd':
       if(currentVersion.slice(0,8) === "NuvBuild"){
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VKe");},400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [https://goo.gl/cUOV82]");},400);
       } else if(currentVersion.slice(0,8) === "ResBuild"){
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VA1");},400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [https://goo.gl/He51ui]");},400);
       } else if(currentVersion.slice(0,6) === "Stable"){
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: http://nazr.in/VMi");},400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " Commands list: [https://goo.gl/NARv98]");},400);
       }
       cooldown();
     break;
     case'!disable':
       if(data.uid === 5010460){
-        API.off(API.CHAT,utility);
-        setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");},400);}
+        setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");API.off(API.CHAT,main);},400);}
       else if(userRole2){
-        API.off(API.CHAT,utility);
-        setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");},400);}
+        setTimeout(function(){API.sendChat("/me 「Utility Bot」has been disabled by " + userName3 + ".");API.off(API.CHAT,main);},400);}
     break;
     case'!uploaders':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here's a link to the YouTube channels of our staff: [http://donvoo.me/uploaders]");},400);
@@ -213,10 +211,10 @@ function c1(data,cn){
         cooldown();
       }
     break;
-    case'!makenightcore':
+    /*case'!makenightcore':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here's a link that explains how to make nightcore: [http://nazr.in/UEM]");},400);
       cooldown();
-    break;
+    break;*/
     case'!join':
       setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},400);
       cooldown();
@@ -239,7 +237,7 @@ function c1(data,cn){
         }
       }*/
     break;
-    case'!subscribe':
+    /*case'!subscribe':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userName2 + " Subscriptions help support plug.dj, and they're very cheap! Here's a link to subscribe: http://nazr.in/UKC");},400);
       cooldown();
     break;
@@ -250,7 +248,7 @@ function c1(data,cn){
     case'!pokemon':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " Here is the link to our Pokemon Server: http://nazr.in/UYM");},400);
       cooldown();
-    break;
+    break;*/
     case'!givepos':
       if(positionGivingUsers.indexOf(data.un) === -1){
         if(wlPos !== 0){
@@ -267,13 +265,13 @@ function c1(data,cn){
     case'!take':
       if(userPosGive === true){
         if(positionGivingUsers.indexOf(data.un) === -1){
-          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
-          setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
-          setTimeout(function(){positionGivingUsers.shift();},900);
+          positionGivingUsers.shift();
           if(positionGivingUsers[0] === undefined){
             userPosGive = false;
           }
-        } else if(positionGivingUsers.indexOf(data.un) !== -1){
+          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
+          setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
+        } else {
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " You can't take your own spot! Write !removespot instead.");},400);
         }
       }
@@ -434,8 +432,17 @@ function c2(data,cn){
       cooldown();
     break;
     case'!spot':
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + userTarget + "'s current position in the wailist is:" + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
+      if(userTarget!==-1){
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + "'s current position in the wailist is:" + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
+      } else {
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " is not in the waitlist.");},400);
+      }
       cooldown();
+    break;
+    case'!define':
+      if(data.message.indexOf(" ")!==-1)
+      var toDef = ((data.message.indexOf(" ")).trim()).replace(" ","+");
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
     break;
   }
 }
@@ -471,7 +478,7 @@ function psg(data){
 function posListAnnouncement(){
   var pLA;
   if(userPosGive === true && plA !== true){
-    pLA = setTimeout(function timeoutPosList(){API.sendChat("「UB」" + positionGivingUsers + " are giving away their position. Write !take to claim their spot.");},40000);
+    pLA = setTimeout(function(){API.sendChat("「UB」" + positionGivingUsers + " are giving away their position. Write !take to claim their spot.");},40000);
     plA = true;
   }
   if(positionGivingUsers[0] === undefined){
