@@ -29,7 +29,7 @@ function main(data){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
-  var userTarget = data.message.split("@")[1];
+  var userTarget = "@" + data.message.split("@")[1];
   var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define'];
   var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt'];
   if (commandWait === true){
@@ -304,7 +304,7 @@ function c1(data,cn){
     break;
     case'!define':
       if(data.message.indexOf(" ")!==-1 && userRole0){
-        var toDef = data.message.indexOf(" ")[1].replace(" ","+");
+        var toDef = data.message.slice(8,255).replace(" ","+");
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
       }
     break;
@@ -338,7 +338,7 @@ function c2(data,cn){
   var userName2 = "[@" + data.un + "]";
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
-  var userTarget = data.message.split("@")[1];
+  var userTarget = "@" + data.message.split("@")[1];
   var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
   var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot'];
   switch(cn){
