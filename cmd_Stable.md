@@ -12,10 +12,9 @@ New commands
 
 |Command | Arguments | Required Rank |  Description |
 |:------:|:---------:|:-------------:|:-----------------------------:|
-|!givepos | | None | Gives away the user's position in the waitlist. |
-|!take | | None | Claims the spot that is being given away. |
-|!checkposlist | | Resident Dj | Checks who is currently giving away their spot. |
-|!clearposlist | | Manager | Clears the list of current users giving out their position. |
+|!define | word(s) | Resident Dj | Sends a link to Urban Dictionnary with the mentionned words. |
+|!flirt | @user | Resident Dj | Flirt with some users! With horrible pickup lines. |
+|!natvoo | | Resident Dj | Promote this fabulous ship. |
 
 User-specific 
 -------------
