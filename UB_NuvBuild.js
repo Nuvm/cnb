@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.3";
+var currentVersion = "NuvBuild 1.5.4";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -216,7 +216,9 @@ function c1(data,cn){
       cooldown();
     break;*/
     case'!join':
-      setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},400);
+      if(data.message.slice(0,9)!=='!jointime'){
+        setTimeout(function(){API.sendChat("「UB」" + userName + ", this isn't Tastycat! (This command does not exist)");},400);
+      }
       cooldown();
     break;
     case'!version':
@@ -440,10 +442,27 @@ function c2(data,cn){
       cooldown();
     break;
     case'!define':
-      if(data.message.indexOf(" ")!==-1)
-      var toDef = ((data.message.indexOf(" ")).trim()).replace(" ","+");
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
+      if(data.message.indexOf(" ")!==-1 && userRole0){
+        var toDef = ((data.message.indexOf(" ")).trim()).replace(" ","+");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
+      }
     break;
+    case'!flirt':
+      var choose = ["the human body is 90% water, and I'm real thirsty.","can I buy you a drink or do you just want the money?","with a mane like that you must be a Leo.","do you have a mirror in your pants? Because I can see myself in them.","are your legs tired? Because you have been running through my dreams all night.","is your father a thief? Because he stole the stars fomr the skies and put them in your eyes.","are you okay? It must have been a long fall from Heaven","I really like that outfit. It would look great crumpled at the end of my bed.","what do you like to eat for breakfast? Oh good, I have that.","I know they say milk does a body good - but damn, how much have you been drinking?","so, are you legal?","I have cable TV.","if I told you that you have a lovely body, would you hold it against me?","did the sun just come out or did you smile at me?","is it hot in here, or is it just you?","do you believe in love at first sight or do I have to walk by you again?","I lost my phone number... Can I have yours?","if you were a burger at McDonald's, I'd call you McBeautiful.","my name's _____. But you can call me.... tonight.","no wonder the sky's gray today - all the blue is in your eyes.","what's your name? Or shall I just call you mine?","if I could rearrange the alphabet, I'd put U and I together.","look at you with all those curves and me with no brakes!","I may not be Fred Flinstone/Wilma Flintstone, but I can sure make your bed rock!","do you have raisins? No? How about a date?","do you have a Band-Aid? 'Cause I skinned my knee when I fell for you.","can I have a picture of you so I can show Santa what I want for Christmas?","my bed is broken. Can I sleep in yours?","I'm not feeling myself tonight. Can I feel you?","my name is _____. Remember that, you'll be screaming it later.","is that a ladder in your stockings or the stairway to Heaven?","I may not be the best looking guy/girl in here, but I'm the only one talking to you.","*licks finger and wipes on his/her shirt* Let's get you out of these wet clothes.","did u sit on sugar? Because you have a sweet ass."," is your dad a baker? 'Cuz you have good buns.","is your dad a terrorist? 'Cuz you're the bomb.","pickup lines are overrated. Go out with me?","do you live in a corn field? 'Cuz I could stalk you all day.","is your name Google? 'Cuz you have everything I'm searching for.","do you like legos? 'Cuz I think you and I should build a relationship together.","do you have a map? I'm getting lost in your eyes.","are you a weeping angel because I can't keep my eyes from you.","if I got a euro for everytime I thought of you, I would have one euro because you never leave my mind."];
+      var selection = choose[Math.floor(Math.random()*choose.length)];
+      if(userRole0){
+        setTimeout(function(){API.sendChat("「UB」" + userName + " says to " + userTarget + ": Hey, " + selection);},600);
+        cooldown();
+      }
+    break;
+    case'!natvoo':
+      var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
+      var soRandom = plsChoose[Math.floor(Math.random()*plsChoose.length)];
+      if(userRole0){
+        setTimeout(function(){API.sendChat("「UB」" + userName + soRandom);},600);
+        cooldown();
+      }
+      break;
   }
 }
 function cooldown() {
