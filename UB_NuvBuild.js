@@ -267,12 +267,13 @@ function c1(data,cn){
     case'!take':
       if(userPosGive === true){
         if(positionGivingUsers.indexOf(data.un) === -1){
+          var positionGivingUser = positionGivingUsers[0];
           positionGivingUsers.shift();
           if(positionGivingUsers[0] === undefined){
             userPosGive = false;
           }
-          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUsers[0] + "'s spot.");},400);
-          setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUsers[0]);},800);
+          setTimeout(function(){API.sendChat("/me 「UB」" + userName + " has taken @" + positionGivingUser + "'s spot.");},400);
+          setTimeout(function(){API.sendChat("!swap " + userName + " @" + positionGivingUser);},800);
         } else {
           setTimeout(function(){API.sendChat("「UB」" + userName2 + " You can't take your own spot! Write !removespot instead.");},400);
         }
