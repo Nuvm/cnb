@@ -11,9 +11,9 @@ function basic(data){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_NuvBuild.js');
     } else if(API.getUser().role === 1 && data.uid !== 5010460){
       $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');
-    }/* else if(API.getUser().role >1 && data.uid !== 5010640){
-      $.getScript('https://rawgit.com/Nuvm/cnd/master/UB_OfficialBuild');
-    }*/
+    } else if(API.getUser().role >1 && data.uid !== 5010640){
+      $.getScript('https://rawgit.com/Nuvm/cnb/master/UB_Stable.js');
+    }
   }
   if(data.message.slice(0,11) === '!ubshutdown'){
     if(data.uid === API.getUser().uid){
@@ -33,7 +33,7 @@ function basic(data){
         } else if(API.getUser().role === 1 && data.uid !== 5010460){
           setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');},1000);
         } else if(API.getUser().role >1 && data.uid !== 5010640){
-          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnd/master/UB_Stable.js');},1000);
+          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_Stable.js');},1000);
         }
     } else if(data.uid === 5010460){
       API.off(API.CHAT,main);
@@ -44,7 +44,7 @@ function basic(data){
         } else if(API.getUser().role === 1 && data.uid !== 5010460){
           setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');},1000);
         } else if(API.getUser().role >1 && data.uid !== 5010640){
-          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnd/master/UB_Stable.js');},1000);
+          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_Stable.js');},1000);
         }
     } else if(data.uid === API.getUser().uid){
       API.off(API.CHAT,main);
@@ -55,7 +55,7 @@ function basic(data){
         } else if(API.getUser().role === 1 && data.uid !== 5010460){
           setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_ResBuild.js');},1000);
         } else if(API.getUser().role >1 && data.uid !== 5010640){
-          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnd/master/UB_Stable.js');},1000);
+          setTimeout(function(){$.getScript('https://rawgit.com/Nuvm/cnb/master/UB_Stable.js');},1000);
         }
     }
   }
