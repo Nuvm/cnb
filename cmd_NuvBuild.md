@@ -12,9 +12,9 @@ New commands
 
 |Command | Arguments | Required Rank |  Description |
 |:------:|:---------:|:-------------:|:-----------------------------:|
-|!define | word(s) | Resident Dj | Sends a link to Urban Dictionnary with the mentionned words. |
-|!flirt | @user | Resident Dj | Flirt with some users! With horrible pickup lines. |
-|!natvoo | | Resident Dj | Promote this fabulous ship. |
+|!nuvm | (@user) | User | Sends a link to my website :) |
+|!givespot | | User | An alias to the !givepos command. |
+|!animelist | (MAL username) | User | Sends a link to my (Nuvm) animelist or to someone else's animelist. (BETA) |
 
 User-specific 
 -------------
@@ -81,7 +81,10 @@ User
 |!pokemon | (@user) | Sends a link to our Pokemon server. |
 |!noobscript | | Sends a link to Noobscript. |
 |!givepos | | Gives away the user's position in the waitlist. |
+|!givespot | | An alias to the !givepos command. |
 |!take | | Claims the spot that is being given away. |
+|!nuvm | (@user) | Sends a link to my website :) |
+|!animelist | (MAL username) | Sends a link to my (Nuvm) animelist or to someone else's animelist. (BETA) |
 
 
 Event-Related
