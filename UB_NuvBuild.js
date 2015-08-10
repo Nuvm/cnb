@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.6.0 Patch 1";
+var currentVersion = "NuvBuild 1.6.0 Patch 2";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -45,10 +45,12 @@ function main(data){
       case'!':
         if(data.message.indexOf('@')!==-1){
           for(i=0;i<cmds.length;i++){
-            if(data.message.slice(0,cmds[i].length)==cmds[i] && getId((data.message.split('@')[1]).trim())===undefined){
-              API.sendChat("「UB」" + userName2 + " The user you mentionned doesn't exist!");
-            } else {
-              c2(data,cmds[i]);
+            if(data.message.slice(0,cmds[i].length)==cmds[i]){
+              if(getId((data.message.split('@')[1]).trim())===undefined){
+                API.sendChat("「UB」" + userName2 + " The user you mentionned doesn't exist!");
+              } else {
+                c2(data,cmds[i]);
+              }
             }
           }
         } else {
