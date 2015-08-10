@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.6.0";
+var currentVersion = "NuvBuild 1.6.0 Patch 1";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -30,8 +30,8 @@ function main(data){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
-  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define','!animelist','!nuvm','!givespot'];
-  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt','!nuvm'];
+  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define','!animelist','!nuvm','!givespot'];
+  var cmds = ['!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt','!nuvm'];
   if (commandWait === true){
     if(/^.*(?!skips|skipped|history|no|don't|dont|not|why).*skip.*$/i.test(data.message)){
       if(API.getUser(data.uid).role === 0){
