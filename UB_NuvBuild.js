@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.8";
+var currentVersion = "NuvBuild 1.5.9";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -31,7 +31,7 @@ function main(data){
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
   var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define'];
-  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt'];
+  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt'];
   if (commandWait === true){
     if(/^.*(?!skips|skipped|history|no|don't|dont|not|why).*skip.*$/i.test(data.message)){
       if(API.getUser(data.uid).role === 0){
@@ -317,6 +317,14 @@ function c1(data,cn){
         cooldown();
       }
     break;
+    case'!animelist':
+      if(data.message.indexOf(" ")!==-1 && userRole0){
+        var toList = data.message.slice(8,255).replace(" ","+");
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://myanimelist.net/animelist/" + toList);},400);
+      } else if(data.message.indexOf(" ")===-1){
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://myanimelist.net/animelist/Nuvm");},400);
+      }
+    break;
   }
 }
 function c2(data,cn){
@@ -340,14 +348,8 @@ function c2(data,cn){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
-  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
-  var cmds = ['!fresdj','!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!resdj','!pokemon','!ban','!mute','!smute','!uid','!spot'];
+  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot'];
   switch(cn){
-    case'!fresdj':
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Click here to get Res Dj instantly! [http://nazr.in/Txl]");
-      },400);
-      cooldown();
-    break;
     case'!genre2':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
       },400);
@@ -394,15 +396,10 @@ function c2(data,cn){
       }
       cooldown();
     break;
-    case'!resdj':
-      setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Register on the forums [http://nazr.in/Tyu] and then check the Requirements thread before posting your app here: [http://nazr.in/Ubg]");
-      },400);
-      cooldown();
-    break;
-    case'!pokemon':
+    /*case'!pokemon':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Here is the link to our Pokemon Server: http://nazr.in/UYM");},400);
       cooldown();
-    break;
+    break;*/
     case'!ban':
       if(userRole1){
         if(/^[0-9]+$/.test(data.message.slice(5,11))){
@@ -450,7 +447,7 @@ function c2(data,cn){
     break;
     case'!spot':
       if(userTarget!==-1){
-        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + "'s current position in the wailist is: " + API.getWaitListPosition(getId((data.message.split('@')[1]).trim())) + ".");},400);
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + "'s current position in the wailist is: " + API.getWaitListPosition(getId((data.message.split('@')[1]).trim()))+1 + ".");},400);
       } else {
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " is not in the waitlist.");},400);
       }
@@ -504,7 +501,7 @@ function posListAnnouncement(){
   if(positionGivingUsers[0] === undefined){
     clearTimeout(pLA);
     userPosGive = false;
-    plA = false;
+    plA = true;
   }
 }
 /*function extra(data){
