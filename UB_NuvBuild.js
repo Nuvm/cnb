@@ -3,7 +3,7 @@
 //Feel free to pull merge requests with new commands and features,
 //As well as asking for new ones!
 var positionGivingUsers = [];
-var currentVersion = "NuvBuild 1.5.9";
+var currentVersion = "NuvBuild 1.6.0";
 var userPosGive;
 var plA;
 setInterval(posListAnnouncement,5000);
@@ -30,8 +30,8 @@ function main(data){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
-  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define'];
-  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt'];
+  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist','!natvoo','!define','!animelist','!nuvm','!givespot'];
+  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot','!flirt','!nuvm'];
   if (commandWait === true){
     if(/^.*(?!skips|skipped|history|no|don't|dont|not|why).*skip.*$/i.test(data.message)){
       if(API.getUser(data.uid).role === 0){
@@ -44,39 +44,20 @@ function main(data){
     switch(data.message.slice(0,1)){
       case'!':
         if(data.message.indexOf('@')!==-1){
-          console.log("Detected '@'.");
           for(i=0;i<cmds.length;i++){
-            console.log("Entered 'for' loop.");
-            if(data.message.slice(0,cmds[i].length)==cmds[i]){
-              console.log("Found a corresponding command: " + cmds[i]);
-              if(getId((data.message.split('@')[1]).trim())===undefined){
-                API.sendChat("「UB」" + userName2 + " The user you mentionned doesn't exist!");
-              } else {
-                console.log('getId returned ' + getId((data.message.split('@')[1]).trim()));
-                c2(data,cmds[i]);
-              }
+            if(data.message.slice(0,cmds[i].length)==cmds[i] && getId((data.message.split('@')[1]).trim())===undefined){
+              API.sendChat("「UB」" + userName2 + " The user you mentionned doesn't exist!");
             } else {
-              console.log("'! && @' was detected but didn't match the following command: " + cmds[i]);
-            }
-            if(cmds.length===i && cmds[i]!==data.message.slice(0,cmds[i].length)){
-              console.log('Could not match a command.');
+              c2(data,cmds[i]);
             }
           }
         } else {
           for(i=0;i<cmd.length;i++){
             if(data.message.slice(0,cmd[i].length)==cmd[i]){
               c1(data,cmd[i]);
-            } else {
-              console.log("'!' was detected but didn't match the following command: " + cmd[i]);
-            }
-            if(cmd.length===i && cmd[i]!==data.message.slice(0,cmd[i].length)){
-              console.log('Could not match a command.');
             }
           }
         }
-      break;
-      default:
-        console.log("no '!' detected in data.message switch.");
       break;
     }
   }
@@ -102,7 +83,6 @@ function c1(data,cn){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
-  var cmd = ['!ping','!fresdj','!rcs','!helprcs','!blacklist','!call','!adv','!advertising','!spam','!mehspam','!genre2','!theme2','!rules2','!cmd','!disable','!uploaders','!ships','!credits','!randomevent','!donvoo','!makenightcore','!join','!version','!enable derpstaff','!subscribe','!noobscript','!pokemon','!givepos','!take','!removespot','!checkposlist','!clearposlist'];
   switch(cn){
     case'!ping':
       if(userRole0){
@@ -308,6 +288,7 @@ function c1(data,cn){
         var toDef = data.message.slice(8,255).replace(" ","+");
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://urbandictionnary.com/define.php?term=" + toDef);},400);
       }
+      cooldown();
     break;
     case'!natvoo':
       var plsChoose = [' promotes this ship: http://i.imgur.com/p9jXVoW.jpg',' promotes this ship: https://i.imgur.com/yCDGRbb.png'];
@@ -321,8 +302,27 @@ function c1(data,cn){
       if(data.message.indexOf(" ")!==-1 && userRole0){
         var toList = data.message.slice(8,255).replace(" ","+");
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://myanimelist.net/animelist/" + toList);},400);
+        cooldown();
       } else if(data.message.indexOf(" ")===-1){
         setTimeout(function(){API.sendChat("「UB」" + userName2 + " http://myanimelist.net/animelist/Nuvm");},400);
+        cooldown();
+      }
+    break;
+    case'!nuvm':
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " Nuvm's website: http://nuvm.net16.net");},400);
+      cooldown();
+    break;
+    case'!givespot':
+      if(positionGivingUsers.indexOf(data.un) === -1){
+        if(wlPos !== 0){
+          setTimeout(function(){API.sendChat("「UB」" + userName + " is giving away his/her spot: " + wlPos + ". Write !take to claim the spot.");},400);
+        } else if(wlPos === -1){
+          setTimeout(function(){API.sendChat("「UB」" + userName2 + " You are not in the waitlist, therefore you cannot give your spot.");},400);
+          cooldown();
+        }
+      } else if(positionGivingUsers.indexOf(data.un) !== -1){
+        setTimeout(function(){API.sendChat("「UB」" + userName2 + " You are already giving out your position!");},400);
+        cooldown();
       }
     break;
   }
@@ -348,7 +348,6 @@ function c2(data,cn){
   var userName3 = data.un;
   var userName4 = "[" + data.un + "]";
   var userTarget = "@" + data.message.split("@")[1];
-  var cmds = ['!genre2','!theme2','!rules2','!rcs','!helprcs','!adv','!spam','!mehspam','!pokemon','!ban','!mute','!smute','!uid','!spot'];
   switch(cn){
     case'!genre2':
       setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Here is the Nightcore-331 Genre list: [http://www.nightcore-331.net/viewtopic.php?f=6&t=626]");
@@ -461,6 +460,10 @@ function c2(data,cn){
         cooldown();
       }
     break;
+    case'!nuvm':
+      setTimeout(function(){API.sendChat("「UB」" + userName2 + " " + userTarget + " Nuvm's website: http://nuvm.net16.net");},400);
+      cooldown();
+    break;
   }
 }
 function cooldown() {
@@ -483,7 +486,7 @@ function getId(username){
 API.on(API.CHAT,psg);
 function psg(data){
   this.data = data;
-  if(data.message.slice(0,9) === '!givepos'){
+  if(data.message.slice(0,9) === '!givepos' || data.message.slice(0,10) === '!givespot'){
     if(positionGivingUsers.indexOf(data.un) === -1){
       if(API.getWaitListPosition(data.uid) !== -1){
         userPosGive = true;
@@ -494,8 +497,13 @@ function psg(data){
 }
 function posListAnnouncement(){
   var pLA;
+  var plA;
   if(userPosGive === true && plA !== true){
-    pLA = setTimeout(function(){API.sendChat("「UB」" + positionGivingUsers + " are giving away their position. Write !take to claim their spot.");},40000);
+    if(positionGivingUsers.length>1){
+      pLA = setTimeout(function(){API.sendChat("「UB」" + positionGivingUsers + " are giving away their position. Write !take to claim their spot.");},40000);
+    } else {
+      pLA = setTimeout(function(){API.sendChat("「UB」" + positionGivingUsers + " is giving away their position. Write !take to claim their spot.");},40000);
+    }
     plA = true;
   }
   if(positionGivingUsers[0] === undefined){
